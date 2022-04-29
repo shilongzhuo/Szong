@@ -33,6 +33,7 @@ class FirstFragment : Fragment() {
 
     fun doSomething(view: View?) { //方法必须定义为public
 //        val tv = findViewById<TextView>(R.id.textview_first)
+//点击态
     }
 
 
