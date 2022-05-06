@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">Szong</string>
+    <string name="team_name">二十四桥明月夜</string>
+    <string name="my">我的</string>
+    <string name="home">首页</string>
+    <string name="about">关于</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
