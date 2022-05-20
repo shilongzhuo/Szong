@@ -1,14 +1,19 @@
 <resources>
-    <string name="app_name">Szong</string>
+    <string name="app_name">Szong Music</string>
     <string name="team_name">二十四桥明月夜</string>
     <string name="my">我的</string>
     <string name="home">首页</string>
     <string name="about">关于</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
+    <string name="local_music">本地</string>
+    <string name="cloud_drive">云</string>
+    <string name="my_favorite_songs">我的收藏</string>
+    <string name="history">最近播放</string>
+    <string name="play_queue"></string>
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
+    <string name="next">Next Step</string>
     <string name="previous">Previous</string>
 
     <string name="hello_first_fragment">Hello World,丝竹音乐播放器</string>
