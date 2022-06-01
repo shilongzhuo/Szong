@@ -29,7 +29,7 @@
 
     </androidx.cardview.widget.CardView>
 
-   <!-- <com.dirror.music.widget.MarqueeTextView
+    <com.example.szong.widget.MarqueeTextView
         android:id="@+id/tvTitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -72,5 +72,4 @@
         app:layout_constraintTop_toTopOf="@+id/tvTitle"
         app:srcCompat="@drawable/ic_mini_player_play"
         tools:ignore="ContentDescription,VectorDrawableCompat" />
--->
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,9 +3,12 @@ package com.example.szong
 import android.annotation.SuppressLint
 import android.app.Application
 import android.content.Context
+import android.content.Intent
+import android.os.Build
 import android.util.Log
 import com.example.szong.config.Config
 import com.example.szong.database.room.AppDatabase
+import com.example.szong.manager.ActivityManager
 import com.example.szong.util.net.ChineseIPData
 import com.example.szong.util.theme.DarkThemeUtil
 import com.tencent.mmkv.MMKV
@@ -23,6 +26,8 @@ class App : Application() {
         MMKV.initialize(context)
         mmkv = MMKV.defaultMMKV()
 
+        // activity 管理
+        activityManager = ActivityManager()
         // 初始化数据库
         appDatabase = AppDatabase.getDatabase(this)
         // 安全检查
@@ -54,7 +59,7 @@ class App : Application() {
      * 安全检查
      */
     private fun checkSecure() {
-       /* if (Secure.isSecure()) {
+       /** if (Secure.isSecure()) {
             // 初始化友盟
             // UMConfigure.init(context, UM_APP_KEY, "", UMConfigure.DEVICE_TYPE_PHONE, "")
             // 选用 AUTO 页面采集模式
@@ -65,6 +70,22 @@ class App : Application() {
             Secure.killMyself()
         }*/
     }
+
+    /**
+     *  启动音乐服务
+    private fun startMusicService() {
+        // 通过 Service 播放音乐，混合启动
+        val intent = Intent(this, MusicService::class.java)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            startForegroundService(intent)
+        } else {
+            startService(intent)
+        }
+        // 绑定服务
+        bindService(intent, musicServiceConnection, BIND_AUTO_CREATE)
+    }
+*/
+
     companion object {
 
         private val TAG = this::class.java.simpleName
@@ -76,6 +97,7 @@ class App : Application() {
         @SuppressLint("StaticFieldLeak")
         lateinit var context: Context
 
+        lateinit var activityManager: ActivityManager
 
         val coroutineScope = CoroutineScope(EmptyCoroutineContext)
 
