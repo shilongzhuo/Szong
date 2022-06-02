@@ -101,7 +101,7 @@ object CloudMusicApi {
      * 接口地址 : /personalized/newsong
      * 调用例子 : /personalized/newsong
      */
-    const val PERSONALIZED_NEW_SONG = "${API_MUSIC_ELEUU}/personalized/newsong"
+    const val PERSONALIZED_NEW_SONG = "${API_AUTU}/personalized/newsong"
 
 }
 

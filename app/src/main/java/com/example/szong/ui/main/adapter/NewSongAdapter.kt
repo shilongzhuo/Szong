@@ -38,7 +38,7 @@ class NewSongAdapter(private val songDataList: ArrayList<StandardSongData>): Rec
                 ivCover.load(it) {
                     allowHardware(false)
                     size(ViewSizeResolver(ivCover))
-                    crossfade(300)
+                    crossfade(30)
                 }
             }
             tvName.text = songData.name
