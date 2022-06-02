@@ -1,4 +1,4 @@
-package com.example.szong.ui.activity
+package com.example.szong.ui.splash
 
 import android.content.Intent
 import com.example.szong.databinding.ActivitySplashBinding

@@ -1,24 +1,19 @@
 package com.example.szong.ui.main
 
 import android.annotation.SuppressLint
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
-import androidx.recyclerview.widget.ConcatAdapter
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.dirror.music.ui.main.adapter.MyFragmentIconAdapter
-import com.dirror.music.ui.main.adapter.MyFragmentUserAdapter
-import com.example.szong.App
-import com.example.szong.manager.User
+import com.example.szong.ui.main.adapter.MyFragmentIconAdapter
+import com.example.szong.ui.main.adapter.MyFragmentUserAdapter
 import com.example.szong.ui.base.BaseFragment
 import com.example.szong.ui.main.viewmodel.MainViewModel
 import com.example.szong.ui.main.viewmodel.MyFragmentViewModel
-import dp
 
 /**
  * 我的

@@ -100,6 +100,9 @@ class MainActivity : BaseActivity() {
             }
         }
 
+        /**
+         * 音乐播放栏的毛玻璃特效
+         */
         val radius = 20f
         val decorView: View = window.decorView
         val windowBackground: Drawable = decorView.background
@@ -117,7 +120,7 @@ class MainActivity : BaseActivity() {
 
             override fun createFragment(position: Int): Fragment {
                 return when (position) {
-                   // 0 -> MyFragment()
+                    0 -> MyFragment()
                     else -> HomeFragment()
                 }
             }
@@ -169,9 +172,6 @@ class MainActivity : BaseActivity() {
             (binding.viewPager2.layoutParams as ConstraintLayout.LayoutParams).apply {
                 topMargin = 56.dp() + it
             }
-//            (binding.menuMain.llMenu.layoutParams as FrameLayout.LayoutParams).apply {
-//                topMargin = it + 8.dp()
-//            }
         }
         mainViewModel.navigationBarHeight.observe(this) {
             binding.miniPlayer.root.updateLayoutParams<ConstraintLayout.LayoutParams> {
@@ -186,9 +186,9 @@ class MainActivity : BaseActivity() {
     override fun onDestroy() {
         super.onDestroy()
         // 解绑广播接收
-       /** unregisterReceiver(loginReceiver)
+        unregisterReceiver(loginReceiver)
         unregisterReceiver(settingsChangeReceiver)
-       */
+
     }
 
     inner class LoginReceiver : BroadcastReceiver() {

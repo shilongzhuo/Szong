@@ -14,6 +14,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.szong.App
 import com.example.szong.R
@@ -23,6 +24,7 @@ import com.example.szong.ui.compose.RoundedColumn
 import com.example.szong.ui.main.viewmodel.MainViewModel
 import com.example.szong.util.compose.textDp
 import com.example.szong.util.security.Secure
+
 
 
 @Composable
@@ -66,6 +68,7 @@ fun MainMenu(activity: Activity, mainViewModel: MainViewModel) {
         }
     }
 }
+
 
 @Composable
 private fun MenuItem(

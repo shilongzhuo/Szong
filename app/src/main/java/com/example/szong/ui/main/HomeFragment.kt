@@ -8,8 +8,15 @@ import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.szong.databinding.FragmentHomeBinding
+import com.example.szong.databinding.IncludeFoyouBinding
+
 import com.example.szong.manager.User
+import com.example.szong.music.netease.PlaylistRecommend
 import com.example.szong.ui.base.BaseFragment
+import com.example.szong.ui.main.adapter.NewSongAdapter
+import com.example.szong.ui.main.adapter.PlaylistRecommendAdapter
+import com.example.szong.ui.main.service.newsong.NewSong
+import com.example.szong.ui.main.service.sentence.Sentence
 import com.example.szong.ui.main.viewmodel.MainViewModel
 import com.example.szong.util.animation.AnimationUtil
 import com.example.szong.util.runOnMainThread
@@ -18,6 +25,7 @@ import com.example.szong.util.status.ErrorCode
 class HomeFragment : BaseFragment(){
 
     private var _binding: FragmentHomeBinding? = null
+    private var inb: IncludeFoyouBinding?=null
     private val binding get() = _binding!!
 
     private val mainViewModel: MainViewModel by activityViewModels()
@@ -46,7 +54,7 @@ class HomeFragment : BaseFragment(){
     }
 
     override fun initListener() {
-        binding.includeFoyou.root.setOnClickListener {
+              binding.includeFoyou.root.setOnClickListener {
             changeSentence()
         }
 /**
@@ -89,10 +97,10 @@ class HomeFragment : BaseFragment(){
     }
 
     private fun changeSentence() {
-       // binding.includeFoyou.tvText.alpha = 0f
-       // binding.includeFoyou.tvAuthor.alpha = 0f
-       // binding.includeFoyou.tvSource.alpha = 0f
-        /**
+        binding.includeFoyou.tvText.alpha = 0f
+        binding.includeFoyou.tvAuthor.alpha = 0f
+        binding.includeFoyou.tvSource.alpha = 0f
+
         Sentence.getSentence {
             runOnMainThread {
                 binding.includeFoyou.tvText.text = it.text
@@ -102,29 +110,29 @@ class HomeFragment : BaseFragment(){
                 AnimationUtil.fadeIn(binding.includeFoyou.tvAuthor, 1000, false)
                 AnimationUtil.fadeIn(binding.includeFoyou.tvSource, 1000, false)
             }
-        }*/
+        }
     }
 
     private fun refreshPlaylistRecommend() {
-       /** PlaylistRecommend.getPlaylistRecommend(requireContext(), {
+        PlaylistRecommend.getPlaylistRecommend(requireContext(), {
             runOnMainThread {
                 binding.rvPlaylistRecommend.layoutManager = GridLayoutManager(context, 2, GridLayoutManager.HORIZONTAL, false)
                 // binding.rvPlaylistRecommend.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
                 binding.rvPlaylistRecommend.adapter = PlaylistRecommendAdapter(it)
 
             }
-        }, {})*/
+        }, {})
     }
 
     private fun updateNewSong() {
-      /**  this.context?.let {
+        this.context?.let {
             NewSong.getNewSong(it) {
                 runOnMainThread {
                     binding.rvNewSong.layoutManager = GridLayoutManager(this.context, 2)
                     binding.rvNewSong.adapter = NewSongAdapter(it)
                 }
             }
-        }*/
+        }
     }
 
 }

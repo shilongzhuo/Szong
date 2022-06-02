@@ -6,6 +6,7 @@ import android.os.Looper
 import android.widget.Toast
 import com.example.szong.App
 import com.example.szong.BuildConfig
+import com.example.szong.music.standard.data.StandardSongData
 import com.example.szong.util.theme.StatusbarColorUtils
 import java.lang.ref.WeakReference
 
@@ -57,3 +58,26 @@ fun toast(msg: String) {
  * dp 转 px
  */
 fun dp2px(dp: Float): Float = dp * App.context.resources.displayMetrics.density
+
+/**
+ * 获取系统当前时间
+ */
+fun getCurrentTime() : Long {
+    return System.currentTimeMillis()
+}
+
+/**
+ * 标准歌手数组转文本
+ * @param artistList 歌手数组
+ * @return 文本
+ */
+fun parseArtist(artistList: ArrayList<StandardSongData.StandardArtistData>): String {
+    var artist = ""
+    for (artistName in 0..artistList.lastIndex) {
+        if (artistName != 0) {
+            artist += " / "
+        }
+        artist += artistList[artistName].name
+    }
+    return artist
+}
