@@ -5,15 +5,16 @@ import android.app.Application
 import android.content.Context
 import android.content.Intent
 import android.os.Build
-import android.util.Log
-import com.example.szong.config.Config
+import androidx.lifecycle.MutableLiveData
+import com.example.szong.config.AppConfig
 import com.example.szong.database.room.AppDatabase
-import com.example.szong.manager.ActivityManager
-import com.example.szong.util.net.ChineseIPData
-import com.example.szong.util.theme.DarkThemeUtil
+import com.example.szong.manager.activity.ActivityManager
+import com.example.szong.manager.music.CloudMusicManager
+import com.example.szong.service.media.music.MusicService
+import com.example.szong.service.media.music.MusicServiceConnection
+import com.example.szong.util.ui.theme.DarkThemeUtil
 import com.tencent.mmkv.MMKV
 import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.launch
 import kotlin.coroutines.EmptyCoroutineContext
 
 
@@ -26,14 +27,17 @@ class App : Application() {
         MMKV.initialize(context)
         mmkv = MMKV.defaultMMKV()
 
+
         // activity 管理
         activityManager = ActivityManager()
+
+        cloudMusicManager = CloudMusicManager()
         // 初始化数据库
         appDatabase = AppDatabase.getDatabase(this)
         // 安全检查
         checkSecure()
 
-        if (mmkv.decodeBool(Config.DARK_THEME, false)) {
+        if (mmkv.decodeBool(AppConfig.DARK_THEME, false)) {
             DarkThemeUtil.setDarkTheme(true)
         }
 
@@ -71,8 +75,8 @@ class App : Application() {
         }*/
     }
 
-    /**
-     *  启动音乐服务
+
+     //  启动音乐服务
     private fun startMusicService() {
         // 通过 Service 播放音乐，混合启动
         val intent = Intent(this, MusicService::class.java)
@@ -84,7 +88,6 @@ class App : Application() {
         // 绑定服务
         bindService(intent, musicServiceConnection, BIND_AUTO_CREATE)
     }
-*/
 
     companion object {
 
@@ -98,6 +101,12 @@ class App : Application() {
         lateinit var context: Context
 
         lateinit var activityManager: ActivityManager
+
+        var musicController = MutableLiveData<MusicService.MusicController?>()
+
+        lateinit var cloudMusicManager: CloudMusicManager
+
+        val musicServiceConnection by lazy { MusicServiceConnection() }
 
         val coroutineScope = CoroutineScope(EmptyCoroutineContext)
 

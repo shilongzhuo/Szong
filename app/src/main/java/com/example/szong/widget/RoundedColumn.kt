@@ -1,4 +1,4 @@
-package com.example.szong.ui.compose
+package com.example.szong.widget
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column

@@ -5,7 +5,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import androidx.room.TypeConverters
 
-import com.example.szong.music.standard.data.StandardSongData
+import com.example.szong.data.music.standard.StandardSongData
 
 /**
  * ‘播放列表‘ 数据实体
@@ -15,7 +15,8 @@ import com.example.szong.music.standard.data.StandardSongData
 @TypeConverters(StandardArtistDataConverter::class, StandardSongDataConverter::class)
 data class PlayQueueData(
     @Embedded
-    var songData: StandardSongData) {
+    var songData: StandardSongData
+) {
     @PrimaryKey(autoGenerate = true)
     var databaseId: Long = 0
 }

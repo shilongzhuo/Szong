@@ -1,6 +1,5 @@
 package com.example.szong.ui.main.adapter
 
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,7 +11,7 @@ import coil.load
 import coil.size.ViewSizeResolver
 import coil.transform.RoundedCornersTransformation
 import com.example.szong.R
-import com.example.szong.music.netease.PlaylistRecommend
+import com.example.szong.api.music.playlist.recommend.netease.PlaylistRecommend
 import com.example.szong.util.dp2px
 import dp
 

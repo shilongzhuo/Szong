@@ -18,13 +18,14 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.GravityCompat
 import androidx.core.view.updateLayoutParams
 import androidx.viewpager2.widget.ViewPager2
-import com.example.szong.config.Config
+import com.example.szong.config.AppConfig
 import com.example.szong.databinding.ActivityMainBinding
 import com.example.szong.ui.base.BaseActivity
 import com.example.szong.ui.main.viewmodel.MainViewModel
+import com.example.szong.ui.main.widget.MainMenu
+import com.example.szong.util.app.runOnMainThread
 import com.example.szong.util.cache.ACache
-import com.example.szong.util.runOnMainThread
-import com.example.szong.util.view.ViewPager2Util
+import com.example.szong.util.ui.improve.ViewPager2Util
 import com.google.accompanist.appcompattheme.AppCompatTheme
 import com.google.android.material.tabs.TabLayoutMediator
 import dp
@@ -93,7 +94,7 @@ class MainActivity : BaseActivity() {
 
     override fun initView() {
         thread {
-            ACache.get(this).getAsBitmap(Config.APP_THEME_BACKGROUND)?.let {
+            ACache.get(this).getAsBitmap(AppConfig.APP_THEME_BACKGROUND)?.let {
                 runOnMainThread {
                     binding.ivTheme.setImageBitmap(it)
                 }
@@ -133,7 +134,7 @@ class MainActivity : BaseActivity() {
             }
         }.attach()
 
-        val select = App.mmkv.decodeInt(Config.SELECT_FRAGMENT, 0)
+        val select = App.mmkv.decodeInt(AppConfig.SELECT_FRAGMENT, 0)
         binding.viewPager2.setCurrentItem(select, false)
 
         ViewPager2Util.changeToNeverMode(binding.viewPager2)
@@ -158,7 +159,7 @@ class MainActivity : BaseActivity() {
             binding.viewPager2.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
                 override fun onPageSelected(position: Int) {
                     super.onPageSelected(position)
-                    App.mmkv.encode(Config.SELECT_FRAGMENT, position)
+                    App.mmkv.encode(AppConfig.SELECT_FRAGMENT, position)
                 }
             })
         }

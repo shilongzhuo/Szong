@@ -3,8 +3,8 @@ package com.example.szong.ui.main.viewmodel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.szong.App
-import com.example.szong.config.Config
-import com.example.szong.manager.User
+import com.example.szong.config.AppConfig
+import com.example.szong.manager.user.NeteaseUser
 
 
 /**
@@ -24,36 +24,36 @@ class MainViewModel: ViewModel() {
      * 用户 id
      */
     val userId =  MutableLiveData<Long>().also {
-        it.value = User.uid
+        it.value = NeteaseUser.uid
     }
 
     /**
      * 网易登录后才可见
      */
     val neteaseLiveVisibility = MutableLiveData<Boolean>().also {
-        it.value = App.mmkv.decodeBool(Config.USER_NETEASE_CLOUD_MUSIC_API_ENABLE, false)
+        it.value = App.mmkv.decodeBool(AppConfig.USER_NETEASE_CLOUD_MUSIC_API_ENABLE, false)
     }
 
     /**
      * 句子推荐可见性
      */
     var sentenceVisibility = MutableLiveData<Boolean>().also {
-        it.value = App.mmkv.decodeBool(Config.SENTENCE_RECOMMEND, true)
+        it.value = App.mmkv.decodeBool(AppConfig.SENTENCE_RECOMMEND, true)
     }
 
     /**
      * 设置用户 id
      */
     fun setUserId() {
-        userId.value = User.uid
+        userId.value = NeteaseUser.uid
     }
 
     /**
      * 刷新 UI
      */
     fun updateUI() {
-        neteaseLiveVisibility.value = App.mmkv.decodeBool(Config.USER_NETEASE_CLOUD_MUSIC_API_ENABLE, false)
-        sentenceVisibility.value = App.mmkv.decodeBool(Config.SENTENCE_RECOMMEND, true)
+        neteaseLiveVisibility.value = App.mmkv.decodeBool(AppConfig.USER_NETEASE_CLOUD_MUSIC_API_ENABLE, false)
+        sentenceVisibility.value = App.mmkv.decodeBool(AppConfig.SENTENCE_RECOMMEND, true)
     }
 
 }

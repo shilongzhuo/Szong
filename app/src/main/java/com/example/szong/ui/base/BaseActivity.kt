@@ -1,14 +1,13 @@
 package com.example.szong.ui.base
 
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.szong.R
 import com.example.szong.databinding.MiniPlayerBinding
 import com.example.szong.util.setStatusBarIconColor
-import com.example.szong.util.theme.DarkThemeUtil
-import com.example.szong.manager.ActivityCollector
+import com.example.szong.util.ui.theme.DarkThemeUtil
+import com.example.szong.manager.activity.ActivityCollector
 
 abstract class BaseActivity : AppCompatActivity() {
 

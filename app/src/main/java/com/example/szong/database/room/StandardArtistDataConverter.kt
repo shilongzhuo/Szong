@@ -1,7 +1,7 @@
 package com.example.szong.database.room
 
 import androidx.room.TypeConverter
-import com.example.szong.music.standard.data.StandardSongData
+import com.example.szong.data.music.standard.StandardSongData
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import java.lang.reflect.Type

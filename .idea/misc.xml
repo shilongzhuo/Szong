@@ -5,18 +5,24 @@
       <map>
         <entry key="..\:/AndridProject/Szong/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Android/work/szong/Szong/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.11851851851851852" />
+        <entry key="..\:/Android/work/szong/Szong/app/src/main/res/drawable/background_seek_bar_music.xml" value="0.12685185185185185" />
         <entry key="..\:/Android/work/szong/Szong/app/src/main/res/drawable/ic_mini_player_pause.xml" value="0.12129629629629629" />
         <entry key="..\:/Android/work/szong/Szong/app/src/main/res/drawable/ic_mini_player_play.xml" value="0.12129629629629629" />
+        <entry key="..\:/Android/work/szong/Szong/app/src/main/res/drawable/ic_music_launcher_foreground.xml" value="0.1" />
         <entry key="..\:/Android/work/szong/Szong/app/src/main/res/drawable/ic_player_more.xml" value="0.12129629629629629" />
         <entry key="..\:/Android/work/szong/Szong/app/src/main/res/drawable/ic_player_pause.xml" value="0.12129629629629629" />
         <entry key="..\:/Android/work/szong/Szong/app/src/main/res/drawable/ic_song_cover.xml" value="0.1" />
         <entry key="..\:/Android/work/szong/Szong/app/src/main/res/layout/activity_main.xml" value="0.10885416666666667" />
+        <entry key="..\:/Android/work/szong/Szong/app/src/main/res/layout/activity_player.xml" value="0.9717741935483871" />
+        <entry key="..\:/Android/work/szong/Szong/app/src/main/res/layout/activity_song_cover.xml" value="0.10729166666666666" />
         <entry key="..\:/Android/work/szong/Szong/app/src/main/res/layout/activity_splash.xml" value="0.12708333333333333" />
         <entry key="..\:/Android/work/szong/Szong/app/src/main/res/layout/content_main.xml" value="0.12545289855072464" />
+        <entry key="..\:/Android/work/szong/Szong/app/src/main/res/layout/dirrorx_right_view_layout.xml" value="0.10729166666666666" />
         <entry key="..\:/Android/work/szong/Szong/app/src/main/res/layout/fragment_first.xml" value="0.12545289855072464" />
         <entry key="..\:/Android/work/szong/Szong/app/src/main/res/layout/include_foyou.xml" value="0.10885416666666667" />
         <entry key="..\:/Android/work/szong/Szong/app/src/main/res/layout/layout_playlist.xml" value="0.10914855072463768" />
         <entry key="..\:/Android/work/szong/Szong/app/src/main/res/layout/mini_player.xml" value="0.16847826086956522" />
+        <entry key="..\:/Android/work/szong/Szong/app/src/main/res/layout/player_cover_image_view.xml" value="0.10729166666666666" />
         <entry key="..\:/Android/work/szong/Szong/app/src/main/res/layout/recycler_fragment_my_icon.xml" value="0.12715298885511653" />
         <entry key="..\:/Android/work/szong/Szong/app/src/main/res/layout/recycler_fragment_my_user.xml" value="0.12715298885511653" />
         <entry key="..\:/Android/work/szong/Szong/app/src/main/res/layout/recycler_my_playlist.xml" value="0.10885416666666667" />

@@ -1,27 +1,23 @@
 package com.example.szong.ui.main
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.GridLayoutManager
-import com.example.szong.App
 import com.example.szong.databinding.FragmentHomeBinding
 import com.example.szong.databinding.IncludeFoyouBinding
 
-import com.example.szong.manager.User
-import com.example.szong.music.netease.PlaylistRecommend
+import com.example.szong.api.music.playlist.recommend.netease.PlaylistRecommend
+import com.example.szong.api.music.song.newsong.netease.NewSong
 import com.example.szong.ui.base.BaseFragment
 import com.example.szong.ui.main.adapter.NewSongAdapter
 import com.example.szong.ui.main.adapter.PlaylistRecommendAdapter
-import com.example.szong.ui.main.service.newsong.NewSong
-import com.example.szong.ui.main.service.sentence.Sentence
+import com.example.szong.api.sentence.Sentence
 import com.example.szong.ui.main.viewmodel.MainViewModel
-import com.example.szong.util.animation.AnimationUtil
-import com.example.szong.util.runOnMainThread
-import com.example.szong.util.status.ErrorCode
+import com.example.szong.util.app.runOnMainThread
+import com.example.szong.util.ui.animation.AnimationUtil
 
 class HomeFragment : BaseFragment(){
 

@@ -4,7 +4,7 @@ import androidx.room.Embedded
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import androidx.room.TypeConverters
-import com.example.szong.music.standard.data.StandardSongData
+import com.example.szong.data.music.standard.StandardSongData
 
 /**
  * ‘我的收藏’的数据实体
@@ -14,7 +14,8 @@ import com.example.szong.music.standard.data.StandardSongData
 @TypeConverters(StandardArtistDataConverter::class)
 data class MyFavoriteData(
     @Embedded
-    var songData: StandardSongData) {
+    var songData: StandardSongData
+) {
 
     @PrimaryKey(autoGenerate = true)
     var databaseId: Long = 0

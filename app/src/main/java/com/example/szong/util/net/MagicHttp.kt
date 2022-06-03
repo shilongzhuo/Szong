@@ -5,8 +5,8 @@ import android.os.Handler
 import android.os.Looper
 import android.util.Log
 import com.example.szong.util.cache.ACache
-import com.example.szong.util.getCurrentTime
-import com.example.szong.util.status.ErrorCode
+import com.example.szong.util.net.status.ErrorCode
+import com.example.szong.util.system.getCurrentTime
 import okhttp3.*
 import org.jetbrains.annotations.TestOnly
 import java.io.IOException
@@ -50,11 +50,6 @@ object MagicHttp {
         @TestOnly
         suspend fun get(url: String): String
 
-    }
-
-    // 运行在主线程，更新 UI
-    fun runOnMainThread(runnable: Runnable) {
-        Handler(Looper.getMainLooper()).post(runnable)
     }
 
     /**

@@ -1,7 +1,6 @@
-package com.example.szong.ui.main
+package com.example.szong.ui.main.widget
 
 import android.app.Activity
-import android.content.Intent
 
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.*
@@ -14,15 +13,14 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.szong.App
 import com.example.szong.R
-import com.example.szong.manager.ActivityCollector
-import com.example.szong.ui.compose.RoundedColumn
+import com.example.szong.manager.activity.ActivityCollector
+import com.example.szong.widget.RoundedColumn
 
 import com.example.szong.ui.main.viewmodel.MainViewModel
-import com.example.szong.util.compose.textDp
+import com.example.szong.util.ui.improve.textDp
 import com.example.szong.util.security.Secure
 
 

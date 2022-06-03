@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import coil.transform.CircleCropTransformation
 import com.example.szong.R
-import com.example.szong.manager.User
+import com.example.szong.manager.user.NeteaseUser
 
 /**
  * MyFragment 页 User 适配器
@@ -53,7 +53,7 @@ class MyFragmentUserAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         with(holder) {
             adapterUser?.let {
-                if (!User.isVip()) {
+                if (!NeteaseUser.isVip()) {
                     ivCVip.visibility = View.GONE
                 }
                 ivCover.load(it.cover + "?param=100y100") {
@@ -63,7 +63,7 @@ class MyFragmentUserAdapter(
 
                 tvLevel.text = "Lv.${it.level}"
             }
-            tvNickname.text = User.szongUser.nickname
+            tvNickname.text = NeteaseUser.szongUser.nickname
         }
     }
 

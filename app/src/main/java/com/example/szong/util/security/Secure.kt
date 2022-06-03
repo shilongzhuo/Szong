@@ -7,7 +7,7 @@ import android.content.pm.PackageInfo
 import android.content.pm.PackageManager
 import android.os.Build
 import com.example.szong.App
-import com.example.szong.config.AppBaseConfig.APP_PACKAGE_NAME
+import com.example.szong.config.AppVersionConfig.APP_PACKAGE_NAME
 import org.jetbrains.annotations.TestOnly
 
 @SuppressLint("StaticFieldLeak")

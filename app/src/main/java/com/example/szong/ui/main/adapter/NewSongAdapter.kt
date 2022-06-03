@@ -1,7 +1,5 @@
 package com.example.szong.ui.main.adapter
 
-import android.app.Activity
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,10 +9,9 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import coil.size.ViewSizeResolver
-import com.example.szong.App
 import com.example.szong.R
-import com.example.szong.music.standard.data.StandardSongData
-import com.example.szong.util.parseArtist
+import com.example.szong.data.music.standard.StandardSongData
+import com.example.szong.data.music.standard.parseArtist
 
 class NewSongAdapter(private val songDataList: ArrayList<StandardSongData>): RecyclerView.Adapter<NewSongAdapter.ViewHolder>() {
 
