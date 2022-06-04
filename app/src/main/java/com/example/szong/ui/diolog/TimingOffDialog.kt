@@ -12,7 +12,7 @@ import com.example.szong.App
 import com.example.szong.R
 import com.example.szong.databinding.DialogTimingOffBinding
 import com.example.szong.service.media.music.SimpleWorker
-import com.example.szong.ui.player.PlayerViewModel
+import com.example.szong.ui.player.viewmodel.PlayerViewModel
 
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import java.util.concurrent.TimeUnit

@@ -92,14 +92,12 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <com.example.szong.widget.lyricview.LyricViewX
+            <com.example.szong.ui.player.LyricViewX
                 android:id="@+id/lyricView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-
                 app:lrcPadding="31dp">
-
-            </com.example.szong.widget.lyricview.LyricViewX>
+            </com.example.szong.ui.player.LyricViewX>
 
             <!--            app:lrcTextGravity="left"-->
 

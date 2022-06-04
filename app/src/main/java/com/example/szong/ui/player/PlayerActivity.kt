@@ -1,12 +1,12 @@
 package com.example.szong.ui.player
 
+
 import android.animation.ObjectAnimator
 import android.annotation.SuppressLint
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
-import android.content.res.Configuration
 import android.graphics.Bitmap
 import android.graphics.Color
 import android.graphics.PorterDuff
@@ -14,7 +14,10 @@ import android.graphics.PorterDuffColorFilter
 import android.os.Handler
 import android.os.Looper
 import android.os.Message
-import android.view.*
+import android.view.KeyEvent
+import android.view.MotionEvent
+import android.view.View
+import android.content.res.Configuration
 import android.view.animation.LinearInterpolator
 import android.widget.SeekBar
 import androidx.activity.viewModels
@@ -30,14 +33,18 @@ import com.example.szong.App
 import com.example.szong.R
 import com.example.szong.api.music.song.favorite.MyFavorite
 import com.example.szong.config.AppConfig
-import com.example.szong.config.AppVersionConfig.APP_PACKAGE_NAME
-
+import com.example.szong.data.music.standard.SOURCE_LOCAL
+import com.example.szong.data.music.standard.SOURCE_NETEASE
 import com.example.szong.data.music.standard.parseArtist
 import com.example.szong.databinding.ActivityPlayerBinding
 import com.example.szong.service.media.base.BaseMediaService
 import com.example.szong.service.media.device.VolumeManager
 import com.example.szong.ui.base.SlideBackActivity
+import com.example.szong.ui.diolog.PlayerMenuMoreDialog
+import com.example.szong.ui.diolog.PlaylistDialog
+import com.example.szong.ui.diolog.SoundEffectDialog
 import com.example.szong.ui.diolog.TimingOffDialog
+import com.example.szong.ui.player.viewmodel.PlayerViewModel
 import com.example.szong.util.app.runOnMainThread
 import com.example.szong.util.app.singleClick
 import com.example.szong.util.ui.animation.AnimationUtil
@@ -46,8 +53,7 @@ import com.example.szong.util.ui.opration.asDrawable
 import com.example.szong.util.ui.opration.colorAlpha
 import com.example.szong.util.ui.opration.colorMix
 import com.example.szong.util.ui.theme.DarkThemeUtil
-import com.example.szong.widget.lyricview.OnPlayClickListener
-import com.example.szong.widget.lyricview.OnSingleClickListener
+import com.example.szong.widget.toast
 
 class PlayerActivity : SlideBackActivity() {
 
@@ -112,8 +118,10 @@ class PlayerActivity : SlideBackActivity() {
         // 设置 SlideBackLayout
         bindSlide(this, binding.clBase)
         // 屏幕旋转
-        val configuration = this.resources.configuration //获取设置的配置信息
-        if (configuration.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+
+        //获取设置的配置信息
+        val appConfiguration = this.resources.configuration
+        if (appConfiguration.orientation == Configuration.ORIENTATION_LANDSCAPE) {
             isLandScape = true
 //            // 横屏隐藏状态栏
 //            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.R) {
@@ -163,7 +171,7 @@ class PlayerActivity : SlideBackActivity() {
                 TimingOffDialog(this@PlayerActivity).show()
             }
             // 评论
-         /**   ivComment.setOnClickListener {
+            ivComment.setOnClickListener {
                 App.musicController.value?.getPlayingSongData()?.value?.let {
                     if (it.source != SOURCE_LOCAL) {
                         App.activityManager.startCommentActivity(
@@ -176,7 +184,6 @@ class PlayerActivity : SlideBackActivity() {
                     }
                 }
             }
-            */
             if (!isLandScape) {
                 includePlayerCover.root.setOnLongClickListener {
                     startActivity(Intent(this@PlayerActivity, SongCoverActivity::class.java))
@@ -249,7 +256,7 @@ class PlayerActivity : SlideBackActivity() {
             // 艺术家
             tvArtist.setOnClickListener {
                 // 测试
-                /**  App.musicController.value?.getPlayingSongData()?.value?.let { standardSongData ->
+                App.musicController.value?.getPlayingSongData()?.value?.let { standardSongData ->
                     if (standardSongData.source == SOURCE_NETEASE) {
                         standardSongData.artists?.let {
                             it[0].artistId?.let { artistId ->
@@ -259,7 +266,7 @@ class PlayerActivity : SlideBackActivity() {
                     } else {
                         toast("未找到信息")
                     }
-                }*/
+                }
             }
             // 翻译更改
             ivTranslation.setOnClickListener {
@@ -301,32 +308,29 @@ class PlayerActivity : SlideBackActivity() {
 
     override fun initShowDialogListener() {
         binding.apply {
-            /**
             // 均衡器
             ivEqualizer.setOnClickListener {
-            singleClick {
-            SoundEffectDialog(this@PlayerActivity, this@PlayerActivity).show()
-            }
+                singleClick {
+                    SoundEffectDialog(this@PlayerActivity, this@PlayerActivity).show()
+                }
             }
             // 更多菜单
             ivMore.setOnClickListener {
-            singleClick {
-            PlayerMenuMoreDialog(this@PlayerActivity).show()
-            }
+                singleClick {
+                    PlayerMenuMoreDialog(this@PlayerActivity).show()
+                }
             }
             // 播放列表
             ivList.setOnClickListener {
-            singleClick {
-            PlaylistDialog().show(supportFragmentManager, null)
+                singleClick {
+                    PlaylistDialog().show(supportFragmentManager, null)
+                }
             }
-            }
-            }*/
-
         }
     }
 
     override fun initBroadcastReceiver() {
-        // Intent 过滤器，只接收 "com.szong.foyou.MUSIC_BROADCAST" 标识广播
+        // Intent 过滤器，只接收 "com.dirror.foyou.MUSIC_BROADCAST" 标识广播
         val intentFilter = IntentFilter()
         intentFilter.addAction(MUSIC_BROADCAST_ACTION)
         musicBroadcastReceiver = MusicBroadcastReceiver()
@@ -562,7 +566,8 @@ class PlayerActivity : SlideBackActivity() {
                         topMargin = top
                     }
                 }
-                binding.clBase?.let {
+
+                binding.llBase?.let {
                     it.updateLayoutParams<ConstraintLayout.LayoutParams> {
                         topMargin = top
                     }
@@ -570,7 +575,7 @@ class PlayerActivity : SlideBackActivity() {
             })
             systemWindowInsetBottom.observe(this@PlayerActivity, { bottom ->
                 if (isLandScape) {
-                    binding.clBase?.let {
+                    binding.llBase?.let {
                         it.updateLayoutParams<ConstraintLayout.LayoutParams> {
                             bottomMargin = bottom
                         }
@@ -645,7 +650,7 @@ class PlayerActivity : SlideBackActivity() {
     }
 
     companion object {
-        private const val MUSIC_BROADCAST_ACTION = "$APP_PACKAGE_NAME.MUSIC_BROADCAST"
+        private const val MUSIC_BROADCAST_ACTION = "com.example.szong.MUSIC_BROADCAST"
         private const val DELAY_MILLIS = 500L
 
         // Handle 消息，播放进度

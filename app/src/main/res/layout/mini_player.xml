@@ -72,4 +72,5 @@
         app:layout_constraintTop_toTopOf="@+id/tvTitle"
         app:srcCompat="@drawable/ic_mini_player_play"
         tools:ignore="ContentDescription,VectorDrawableCompat" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

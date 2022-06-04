@@ -1,5 +1,6 @@
 package com.example.szong.ui.main.adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,6 +13,8 @@ import coil.size.ViewSizeResolver
 import coil.transform.RoundedCornersTransformation
 import com.example.szong.R
 import com.example.szong.api.music.playlist.recommend.netease.PlaylistRecommend
+import com.example.szong.ui.playlist.SongPlaylistActivity
+import com.example.szong.ui.playlist.viewmodel.TAG_NETEASE
 import com.example.szong.util.ui.opration.dp
 import com.example.szong.util.ui.opration.dp2px
 
@@ -57,14 +60,14 @@ class PlaylistRecommendAdapter(private val playlistRecommendDataResult: ArrayLis
             transformations(RoundedCornersTransformation(dp2px(8f)))
             crossfade(300)
         }
-       /** 歌曲播放
-        * holder.clPlaylist.setOnClickListener {
+
+         holder.clPlaylist.setOnClickListener {
             val intent = Intent(it.context, SongPlaylistActivity::class.java)
             intent.putExtra(SongPlaylistActivity.EXTRA_TAG, TAG_NETEASE)
             intent.putExtra(SongPlaylistActivity.EXTRA_ID, playlist.id.toString())
             it.context.startActivity(intent)
         }
-       */
+
         holder.tvTitle.text = playlist.name
 
 

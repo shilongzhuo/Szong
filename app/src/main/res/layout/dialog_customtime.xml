@@ -21,7 +21,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
-                <com.example.szong.widget.wheelView.view.ScrollPickerView
+                <com.example.szong.widget.pickerview.view.ScrollPickerView
                     android:id="@+id/hour"
                     android:layout_width="wrap_content"
                     android:layout_height="500dp"/>
@@ -34,7 +34,7 @@
                     android:textColor="@color/cardview_dark_background"
                     android:text="时    :    "/>
 
-                <com.example.szong.widget.wheelView.view.ScrollPickerView
+                <com.example.szong.widget.pickerview.view.ScrollPickerView
                     android:id="@+id/minute"
                     android:layout_width="wrap_content"
                     android:layout_height="500dp"/>

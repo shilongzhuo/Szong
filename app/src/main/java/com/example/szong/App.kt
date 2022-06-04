@@ -5,6 +5,7 @@ import android.app.Application
 import android.content.Context
 import android.content.Intent
 import android.os.Build
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import com.example.szong.config.AppConfig
 import com.example.szong.database.room.AppDatabase
@@ -12,9 +13,11 @@ import com.example.szong.manager.activity.ActivityManager
 import com.example.szong.manager.music.CloudMusicManager
 import com.example.szong.service.media.music.MusicService
 import com.example.szong.service.media.music.MusicServiceConnection
+import com.example.szong.util.net.ChineseIPData
 import com.example.szong.util.ui.theme.DarkThemeUtil
 import com.tencent.mmkv.MMKV
 import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.launch
 import kotlin.coroutines.EmptyCoroutineContext
 
 
@@ -29,7 +32,7 @@ class App : Application() {
 
 
         // activity 管理
-        activityManager = ActivityManager()
+        activityManager = ActivityManager
 
         cloudMusicManager = CloudMusicManager()
         // 初始化数据库
@@ -41,7 +44,7 @@ class App : Application() {
             DarkThemeUtil.setDarkTheme(true)
         }
 
-      /**  realIP = "0.0.0.0"
+        realIP = "0.0.0.0"
         coroutineScope.launch {
             val lastIP = "LAST_IP"
             val lastIPExpiredTime = "LAST_IP_TIME" // 过期时间
@@ -56,7 +59,7 @@ class App : Application() {
             } else{
                 realIP = ip
             }
-        }*/
+        }
 
     }
     /**
@@ -73,6 +76,7 @@ class App : Application() {
         } else {
             Secure.killMyself()
         }*/
+        startMusicService()
     }
 
 

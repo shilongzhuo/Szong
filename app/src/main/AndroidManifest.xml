@@ -46,11 +46,53 @@
             android:name=".ui.player.PlayerActivity"
             android:launchMode="singleTask"
             android:theme="@style/AppTheme.FullScreen.Translucent" />
+        <activity android:name=".ui.setting.SettingsActivity" />
 
+        <activity android:name=".ui.localmusic.LocalMusicActivity" />
+        <activity android:name=".ui.cloudapi.NeteaseCloudMusicApiActivity" />
+        <activity
+
+            android:name=".ui.playlist.SongSearchActivity"
+            android:windowSoftInputMode="adjustPan" />
+
+        <activity
+            android:name=".ui.player.SongCoverActivity"
+            android:theme="@style/AppTheme.FullScreen" />
+
+
+        <activity android:name=".ui.user.UserCloudActivity" />
+        <activity android:name=".ui.toplist.TopListActivity" />
+        <activity android:name=".ui.recommend.RecommendActivity" />
+
+
+        <activity android:name=".ui.playlist.PlaylistInfoActivity" />
+        <activity android:name=".ui.artist.ArtistActivity" />
+        <activity android:name=".ui.playlist.PlayHistoryActivity" />
+        <activity
+            android:name=".ui.login.LoginActivity3"
+            android:theme="@style/AppTheme.FullScreen" />
+        <activity android:name=".ui.comment.PrivateLetterActivity" />
+        <activity
+            android:name=".ui.user.UserActivity"
+            android:theme="@style/AppTheme.FullScreen" />
+        <activity
+            android:name=".ui.search.SearchActivity"
+            android:theme="@style/AppTheme.Search"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.comment.CommentActivity"
+            android:theme="@style/AppTheme.FullScreen.Translucent" />
+
+        <activity
+            android:name=".ui.playlist.SongPlaylistActivity"
+            android:theme="@style/AppTheme.FullScreen" />
+        <activity android:name=".ui.login.LoginByUidActivity" />
+        <activity android:name=".ui.login.LoginByPhoneActivity" />
+        <activity android:name=".ui.login.LoginByQRCodeActivity" />
 
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="com.dirror.music.FileProvider"
+            android:authorities="com.example.szong.FileProvider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data

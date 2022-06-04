@@ -1,19 +1,31 @@
 package com.example.szong.ui.main
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.ConcatAdapter
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.szong.App
+import com.example.szong.manager.activity.ActivityManager.startUserActivity
+import com.example.szong.manager.user.NeteaseUser
 import com.example.szong.ui.main.adapter.MyFragmentIconAdapter
 import com.example.szong.ui.main.adapter.MyFragmentUserAdapter
 import com.example.szong.ui.base.BaseFragment
+import com.example.szong.ui.main.adapter.BlankAdapter
+import com.example.szong.ui.main.adapter.MyPlaylistAdapter
 import com.example.szong.ui.main.viewmodel.MainViewModel
 import com.example.szong.ui.main.viewmodel.MyFragmentViewModel
+import com.example.szong.ui.playlist.SongPlaylistActivity
+import com.example.szong.ui.playlist.viewmodel.TAG_NETEASE
+import com.example.szong.ui.playlist.viewmodel.TAG_NETEASE_MY_FAVORITE
+import com.example.szong.util.app.runOnMainThread
+import com.example.szong.util.ui.opration.dp
 
 /**
  * 我的
@@ -40,21 +52,21 @@ class MyFragment : BaseFragment() {
 
     private lateinit var myFragmentUserAdapter: MyFragmentUserAdapter
 
-   // private lateinit var myPlaylistAdapter: MyPlaylistAdapter
+    private lateinit var myPlaylistAdapter: MyPlaylistAdapter
 
     override fun initView() {
 
-        /**
+
         myFragmentUserAdapter = MyFragmentUserAdapter() {
-            if (User.uid == 0L) {
+            if (NeteaseUser.uid == 0L) {
                 App.activityManager.startLoginActivity(requireActivity())
             } else {
-                startUserActivity(requireActivity(), User.uid)
+                startUserActivity(requireActivity(), NeteaseUser.uid)
             }
         }
 
-        */
-        /**
+
+
         myPlaylistAdapter = MyPlaylistAdapter {
             if (myFragmentViewModel.userPlaylistList.value?.size ?: 0 > 0) {
                 if (it == myFragmentViewModel.userPlaylistList.value?.get(0)) {
@@ -72,15 +84,15 @@ class MyFragment : BaseFragment() {
         }
 
         val blankAdapter = BlankAdapter(64.dp())
-        */
+
         val myFragmentIconAdapter = MyFragmentIconAdapter(requireContext())
 
 
 
-      //  val concatAdapter = ConcatAdapter(myFragmentUserAdapter, myFragmentIconAdapter, myPlaylistAdapter, blankAdapter)
+        val concatAdapter = ConcatAdapter(myFragmentUserAdapter, myFragmentIconAdapter, myPlaylistAdapter, blankAdapter)
 
         rvMy.layoutManager = LinearLayoutManager(requireContext())
-      //  rvMy.adapter = concatAdapter
+        rvMy.adapter = concatAdapter
 
     }
 
@@ -90,7 +102,7 @@ class MyFragment : BaseFragment() {
 
     @SuppressLint("SetTextI18n")
     override fun initObserver() {
-        /**
+
         mainViewModel.userId.observe(viewLifecycleOwner) {
             myFragmentViewModel.updateUserPlaylist(true)
         }
@@ -117,7 +129,6 @@ class MyFragment : BaseFragment() {
                 })
             }
         }
-        */
     }
 
 }

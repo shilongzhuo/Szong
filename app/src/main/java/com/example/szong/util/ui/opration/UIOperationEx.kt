@@ -1,11 +1,15 @@
 package com.example.szong.util.ui.opration
 
+import android.app.Activity
 import android.content.Context
 import android.graphics.Color
 import android.view.View
+import android.view.Window
 import androidx.core.content.ContextCompat
 import com.example.szong.data.music.standard.StandardSongData
 import com.example.szong.util.ui.opration.dp2px
+import com.example.szong.util.ui.theme.StatusBarUtil
+import com.example.szong.util.ui.theme.StatusbarColorUtils
 import org.json.JSONObject
 import java.io.PrintWriter
 import java.io.StringWriter
@@ -59,4 +63,20 @@ fun View.invisible() {
 
 fun View.gone() {
     this.visibility = View.GONE
+}
+
+/**
+ * 获取状态栏高度
+ * @return px 值
+ */
+fun getStatusBarHeight(window: Window, context: Context): Int {
+    return StatusBarUtil.getStatusBarHeight(window, context)
+}
+
+/**
+ * 设置状态栏图标颜色
+ * @param dark true 为黑色，false 为白色
+ */
+fun setStatusBarIconColor(activity: Activity, dark: Boolean) {
+    StatusbarColorUtils.setStatusBarDarkIcon(activity, dark)
 }

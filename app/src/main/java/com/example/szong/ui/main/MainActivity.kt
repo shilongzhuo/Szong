@@ -3,6 +3,7 @@ package com.example.szong.ui.main
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
+import android.content.IntentFilter
 import android.graphics.drawable.Drawable
 import android.os.Build
 import android.view.MotionEvent
@@ -23,6 +24,8 @@ import com.example.szong.databinding.ActivityMainBinding
 import com.example.szong.ui.base.BaseActivity
 import com.example.szong.ui.main.viewmodel.MainViewModel
 import com.example.szong.ui.main.widget.MainMenu
+import com.example.szong.ui.search.SearchActivity
+import com.example.szong.ui.setting.SettingsActivity
 import com.example.szong.util.app.runOnMainThread
 import com.example.szong.util.cache.ACache
 import com.example.szong.util.ui.improve.ViewPager2Util
@@ -81,7 +84,7 @@ class MainActivity : BaseActivity() {
 
     override fun initData() {
         // Intent 过滤器
-       /** var intentFilter = IntentFilter()
+        var intentFilter = IntentFilter()
         intentFilter.addAction(ACTION_LOGIN)
         loginReceiver = LoginReceiver()
         registerReceiver(loginReceiver, intentFilter)
@@ -90,7 +93,7 @@ class MainActivity : BaseActivity() {
         intentFilter.addAction(SettingsActivity.ACTION)
         settingsChangeReceiver = SettingsChangeReceiver()
         registerReceiver(settingsChangeReceiver, intentFilter)
-       */
+
     }
 
     override fun initView() {
@@ -145,101 +148,102 @@ class MainActivity : BaseActivity() {
     override fun initListener() {
         with(binding) {
             // 搜索按钮
-          /**  ivSearch.setOnClickListener {
+            ivSearch.setOnClickListener {
                 startActivity(Intent(this@MainActivity, SearchActivity::class.java))
                 overridePendingTransition(
                     R.anim.anim_alpha_enter,
                     R.anim.anim_no_anim
-                )*/
+                )
             }
             // 设置按钮
             binding.ivSettings.setOnClickListener {
                 binding.drawerLayout.openDrawer(GravityCompat.START)
             }
 
-            binding.viewPager2.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
+            binding.viewPager2.registerOnPageChangeCallback(object :
+                ViewPager2.OnPageChangeCallback() {
                 override fun onPageSelected(position: Int) {
                     super.onPageSelected(position)
                     App.mmkv.encode(AppConfig.SELECT_FRAGMENT, position)
                 }
             })
         }
-
-
-    override fun initObserver() {
-        mainViewModel.statusBarHeight.observe(this) {
-            (binding.titleBar.layoutParams as ConstraintLayout.LayoutParams).apply {
-                height = 56.dp() + it
-            }
-            (binding.viewPager2.layoutParams as ConstraintLayout.LayoutParams).apply {
-                topMargin = 56.dp() + it
-            }
-        }
-        mainViewModel.navigationBarHeight.observe(this) {
-            binding.miniPlayer.root.updateLayoutParams<ConstraintLayout.LayoutParams> {
-                bottomMargin = it
-            }
-            binding.blurViewPlay.updateLayoutParams<ConstraintLayout.LayoutParams> {
-                height = 64.dp() + it
-            }
-        }
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        // 解绑广播接收
-        unregisterReceiver(loginReceiver)
-        unregisterReceiver(settingsChangeReceiver)
 
-    }
-
-    inner class LoginReceiver : BroadcastReceiver() {
-        override fun onReceive(context: Context, intent: Intent) {
-            // 通知 viewModel
-            mainViewModel.setUserId()
-        }
-    }
-
-    inner class SettingsChangeReceiver : BroadcastReceiver() {
-        override fun onReceive(context: Context, intent: Intent) {
-            mainViewModel.updateUI()
-        }
-    }
-
-    override fun onBackPressed() {
-        if (binding.drawerLayout.isDrawerVisible(GravityCompat.START)) {
-            binding.drawerLayout.close()
-        } else {
-            super.onBackPressed()
-        }
-    }
-
-    private var startX = 0
-    private var startY = 0
-    override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {
-        when (ev?.action) {
-            MotionEvent.ACTION_DOWN -> {
-                startX = ev.x.toInt()
-                startY = ev.y.toInt()
-            }
-            MotionEvent.ACTION_MOVE -> {
-                val endX = ev.x.toInt()
-                val endY = ev.y.toInt()
-                val disX = kotlin.math.abs(endX - startX)
-                val disY = kotlin.math.abs(endY - startY)
-                if (disX < disY) {
-                    // 禁止 ViewPager2
-                    binding.viewPager2.isUserInputEnabled = false
+        override fun initObserver() {
+            mainViewModel.statusBarHeight.observe(this) {
+                (binding.titleBar.layoutParams as ConstraintLayout.LayoutParams).apply {
+                    height = 56.dp() + it
+                }
+                (binding.viewPager2.layoutParams as ConstraintLayout.LayoutParams).apply {
+                    topMargin = 56.dp() + it
                 }
             }
-            MotionEvent.ACTION_UP -> {
-                startX = 0
-                startY = 0
-                // 恢复
-                binding.viewPager2.isUserInputEnabled = true
+            mainViewModel.navigationBarHeight.observe(this) {
+                binding.miniPlayer.root.updateLayoutParams<ConstraintLayout.LayoutParams> {
+                    bottomMargin = it
+                }
+                binding.blurViewPlay.updateLayoutParams<ConstraintLayout.LayoutParams> {
+                    height = 64.dp() + it
+                }
             }
         }
-        return super.dispatchTouchEvent(ev)
-    }
 
+        override fun onDestroy() {
+            super.onDestroy()
+            // 解绑广播接收
+            unregisterReceiver(loginReceiver)
+            unregisterReceiver(settingsChangeReceiver)
+
+        }
+
+        inner class LoginReceiver : BroadcastReceiver() {
+            override fun onReceive(context: Context, intent: Intent) {
+                // 通知 viewModel
+                mainViewModel.setUserId()
+            }
+        }
+
+        inner class SettingsChangeReceiver : BroadcastReceiver() {
+            override fun onReceive(context: Context, intent: Intent) {
+                mainViewModel.updateUI()
+            }
+        }
+
+        override fun onBackPressed() {
+            if (binding.drawerLayout.isDrawerVisible(GravityCompat.START)) {
+                binding.drawerLayout.close()
+            } else {
+                super.onBackPressed()
+            }
+        }
+
+        private var startX = 0
+        private var startY = 0
+        override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {
+            when (ev?.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    startX = ev.x.toInt()
+                    startY = ev.y.toInt()
+                }
+                MotionEvent.ACTION_MOVE -> {
+                    val endX = ev.x.toInt()
+                    val endY = ev.y.toInt()
+                    val disX = kotlin.math.abs(endX - startX)
+                    val disY = kotlin.math.abs(endY - startY)
+                    if (disX < disY) {
+                        // 禁止 ViewPager2
+                        binding.viewPager2.isUserInputEnabled = false
+                    }
+                }
+                MotionEvent.ACTION_UP -> {
+                    startX = 0
+                    startY = 0
+                    // 恢复
+                    binding.viewPager2.isUserInputEnabled = true
+                }
+            }
+            return super.dispatchTouchEvent(ev)
+        }
 }

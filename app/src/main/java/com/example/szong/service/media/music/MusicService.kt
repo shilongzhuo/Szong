@@ -29,6 +29,7 @@ import com.example.szong.R
 import com.example.szong.config.AppConfig
 import com.example.szong.api.music.play.playhistory.local.PlayHistory
 import com.example.szong.api.music.song.fm.netease.PersonalFM
+import com.example.szong.data.music.LyricEntry
 import com.example.szong.data.music.standard.StandardSongData
 import com.example.szong.data.music.standard.parse
 import com.example.szong.service.media.base.BaseMediaService
@@ -42,8 +43,7 @@ import com.example.szong.util.data.previous
 import com.example.szong.util.net.status.InternetState
 import com.example.szong.util.ui.opration.asDrawable
 import com.example.szong.util.ui.opration.dp
-import com.example.szong.widget.lyricview.LyricEntry
-import com.example.szong.widget.lyricview.LyricUtil
+import com.example.szong.ui.player.LyricUtil
 import com.example.szong.widget.toast
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch

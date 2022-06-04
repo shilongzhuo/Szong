@@ -28,7 +28,7 @@ class TimeTextView: View {
             field = value
         }
 
-    private val textPaint = Paint().apply {
+    private var textPaint = Paint().apply {
         isAntiAlias = true
         textSize = TEXT_SIZE.dp().toFloat()
         color = textColor

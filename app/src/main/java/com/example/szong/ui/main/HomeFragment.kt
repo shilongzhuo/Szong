@@ -1,11 +1,13 @@
 package com.example.szong.ui.main
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.szong.databinding.FragmentHomeBinding
 import com.example.szong.databinding.IncludeFoyouBinding
 
@@ -15,9 +17,14 @@ import com.example.szong.ui.base.BaseFragment
 import com.example.szong.ui.main.adapter.NewSongAdapter
 import com.example.szong.ui.main.adapter.PlaylistRecommendAdapter
 import com.example.szong.api.sentence.Sentence
+import com.example.szong.manager.user.NeteaseUser
 import com.example.szong.ui.main.viewmodel.MainViewModel
+import com.example.szong.ui.recommend.RecommendActivity
+import com.example.szong.ui.toplist.TopListActivity
 import com.example.szong.util.app.runOnMainThread
+import com.example.szong.util.net.status.ErrorCode
 import com.example.szong.util.ui.animation.AnimationUtil
+import com.example.szong.widget.toast
 
 class HomeFragment : BaseFragment(){
 
@@ -54,13 +61,13 @@ class HomeFragment : BaseFragment(){
               binding.includeFoyou.root.setOnClickListener {
             changeSentence()
         }
-/**
+
         binding.clDaily.setOnClickListener {
-            if (User.hasCookie) {
+            if (NeteaseUser.hasCookie) {
                 val intent = Intent(this.context, RecommendActivity::class.java)
                 startActivity(intent)
             } else {
-                ErrorCode.toast(ErrorCode.ERROR_NOT_COOKIE)
+               toast(ErrorCode.getMessage(ErrorCode.ERROR_NOT_COOKIE))
             }
         }
 
@@ -68,7 +75,6 @@ class HomeFragment : BaseFragment(){
             val intent = Intent(this.context, TopListActivity::class.java)
             startActivity(intent)
         }
-        */
     }
 
     override fun initObserver() {
@@ -114,7 +120,7 @@ class HomeFragment : BaseFragment(){
         PlaylistRecommend.getPlaylistRecommend(requireContext(), {
             runOnMainThread {
                 binding.rvPlaylistRecommend.layoutManager = GridLayoutManager(context, 2, GridLayoutManager.HORIZONTAL, false)
-                // binding.rvPlaylistRecommend.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+               // binding.rvPlaylistRecommend.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
                 binding.rvPlaylistRecommend.adapter = PlaylistRecommendAdapter(it)
 
             }

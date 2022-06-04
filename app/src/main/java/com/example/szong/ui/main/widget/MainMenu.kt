@@ -37,7 +37,7 @@ fun MainMenu(activity: Activity, mainViewModel: MainViewModel) {
     ) {
         RoundedColumn {
             MenuItem(resId = R.drawable.ic_settings, title = "设置") {
-              //  App.activityManager.startSettingsActivity(activity)
+                App.activityManager.startSettingsActivity(activity)
             }
             MenuItem(resId = R.drawable.ic_feedback, title = "反馈") {
               //  activity.startActivity(Intent(activity, FeedbackActivity::class.java))
@@ -50,10 +50,10 @@ fun MainMenu(activity: Activity, mainViewModel: MainViewModel) {
             //    activity.startActivity(Intent(activity, AboutActivity::class.java))
             }
             MenuItem(resId = R.drawable.ic_we, title = "切换账号") {
-             //   App.activityManager.startLoginActivity(activity)
+                App.activityManager.startLoginActivity(activity)
             }
             MenuItem(resId = R.drawable.ic_exit_app, title = "退出应用") {
-             //   App.musicController.value?.stopMusicService()
+                App.musicController.value?.stopMusicService()
                 ActivityCollector.finishAll()
                 object : Thread() {
                     override fun run() {

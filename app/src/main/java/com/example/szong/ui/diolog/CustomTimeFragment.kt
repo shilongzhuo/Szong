@@ -13,10 +13,10 @@ import androidx.work.WorkManager
 import com.example.szong.App
 import com.example.szong.R
 import com.example.szong.service.media.music.SimpleWorker
-import com.example.szong.widget.wheelView.MyData
-import com.example.szong.widget.wheelView.adapter.ScrollPickerAdapter
-import com.example.szong.widget.wheelView.provider.MyViewProvider
-import com.example.szong.widget.wheelView.view.ScrollPickerView
+import com.example.szong.widget.pickerview.MyData
+import com.example.szong.widget.pickerview.adapter.ScrollPickerAdapter
+import com.example.szong.widget.pickerview.provider.MyViewProvider
+import com.example.szong.widget.pickerview.view.ScrollPickerView
 import java.util.ArrayList
 import java.util.concurrent.TimeUnit
 

@@ -3,7 +3,7 @@ package com.example.szong.service.media.music
 import android.graphics.Bitmap
 import androidx.lifecycle.MutableLiveData
 import com.example.szong.data.music.standard.StandardSongData
-import com.example.szong.widget.lyricview.LyricEntry
+import com.example.szong.data.music.LyricEntry
 
 interface MusicControllerInterface {
 

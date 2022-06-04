@@ -1,13 +1,25 @@
 package com.example.szong.ui.main.adapter
 
 import android.annotation.SuppressLint
+import android.app.Activity
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
+import com.example.szong.App
 import com.example.szong.R
+import com.example.szong.manager.activity.ActivityManager.startLocalMusicActivity
+import com.example.szong.manager.user.NeteaseUser
+import com.example.szong.ui.playlist.PlayHistoryActivity
+import com.example.szong.ui.playlist.SongPlaylistActivity
+import com.example.szong.ui.playlist.viewmodel.TAG_LOCAL_MY_FAVORITE
+import com.example.szong.ui.user.UserCloudActivity
+import com.example.szong.util.net.status.ErrorCode
+import com.example.szong.util.ui.animation.AnimationUtil
+import com.example.szong.widget.toast
 
 class MyFragmentIconAdapter(val context: Context): RecyclerView.Adapter<MyFragmentIconAdapter.ViewHolder>() {
 
@@ -28,7 +40,7 @@ class MyFragmentIconAdapter(val context: Context): RecyclerView.Adapter<MyFragme
 
     @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-       /** holder.apply {
+        holder.apply {
             clLocal.setOnClickListener {
                 AnimationUtil.click(it)
                  startLocalMusicActivity(context)
@@ -51,7 +63,7 @@ class MyFragmentIconAdapter(val context: Context): RecyclerView.Adapter<MyFragme
             }
             clPersonalFM.setOnClickListener {
                 AnimationUtil.click(it)
-                if (User.hasCookie) {
+                if (NeteaseUser.hasCookie) {
                     if (App.musicController.value?.personFM?.value != true) {
                         App.musicController.value?.setPersonFM(true)
                         App.activityManager.startPlayerActivity(context as Activity)
@@ -59,19 +71,19 @@ class MyFragmentIconAdapter(val context: Context): RecyclerView.Adapter<MyFragme
                         App.activityManager.startPlayerActivity(context as Activity)
                     }
                 } else {
-                    ErrorCode.toast(ErrorCode.ERROR_NOT_COOKIE)
+                   toast(ErrorCode.getMessage(ErrorCode.ERROR_NOT_COOKIE))
                 }
             }
             // 用户云盘
             clUserCloud.setOnClickListener {
                 AnimationUtil.click(it)
-                if (User.hasCookie) {
+                if (NeteaseUser.hasCookie) {
                     context.startActivity(Intent(context, UserCloudActivity::class.java))
                 } else {
-                    ErrorCode.toast(ErrorCode.ERROR_NOT_COOKIE)
+                    toast(ErrorCode.getMessage(ErrorCode.ERROR_NOT_COOKIE))
                 }
             }
-        }*/
+        }
     }
 
     override fun getItemCount(): Int {

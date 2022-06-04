@@ -7,7 +7,7 @@ import com.example.szong.R
 import com.example.szong.databinding.MiniPlayerBinding
 import com.example.szong.util.ui.theme.DarkThemeUtil
 import com.example.szong.manager.activity.ActivityCollector
-import com.example.szong.util.ui.theme.setStatusBarIconColor
+import com.example.szong.util.ui.opration.setStatusBarIconColor
 
 abstract class BaseActivity : AppCompatActivity() {
 
