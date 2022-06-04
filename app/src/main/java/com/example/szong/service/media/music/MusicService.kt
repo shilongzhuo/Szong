@@ -21,9 +21,7 @@ import androidx.core.graphics.drawable.toBitmap
 import androidx.lifecycle.MutableLiveData
 import coil.imageLoader
 import coil.request.ImageRequest
-import com.dirror.lyricviewx.LyricEntry
-import com.dso.ext.next
-import com.dso.ext.previous
+
 import com.example.szong.App
 import com.example.szong.App.Companion.context
 import com.example.szong.App.Companion.mmkv
@@ -35,11 +33,17 @@ import com.example.szong.data.music.standard.StandardSongData
 import com.example.szong.data.music.standard.parse
 import com.example.szong.service.media.base.BaseMediaService
 import com.example.szong.service.media.device.BecomingNoisyReceiver
+import com.example.szong.ui.main.MainActivity
+import com.example.szong.ui.player.PlayerActivity
 import com.example.szong.util.app.loge
 import com.example.szong.util.app.runOnMainThread
+import com.example.szong.util.data.next
+import com.example.szong.util.data.previous
 import com.example.szong.util.net.status.InternetState
 import com.example.szong.util.ui.opration.asDrawable
 import com.example.szong.util.ui.opration.dp
+import com.example.szong.widget.lyricview.LyricEntry
+import com.example.szong.widget.lyricview.LyricUtil
 import com.example.szong.widget.toast
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -49,7 +53,7 @@ import kotlin.coroutines.suspendCoroutine
 
 class MusicService : BaseMediaService() {
 
-    /* Dso Music 音乐控制器 */
+    /* 音乐控制器 */
     private val musicController by lazy { MusicController() }
 
     /* 播放模式 */
@@ -416,7 +420,7 @@ class MusicService : BaseMediaService() {
 
         fun sendMusicBroadcast() {
             // Service 通知
-            val intent = Intent("com.dirror.music.MUSIC_BROADCAST")
+            val intent = Intent("com.szong.music.MUSIC_BROADCAST")
             intent.setPackage(packageName)
             sendBroadcast(intent)
         }
@@ -738,14 +742,14 @@ class MusicService : BaseMediaService() {
         }
     }
 
-    /**
+
     @SuppressLint("UnspecifiedImmutableFlag")
     private fun getPendingIntentActivity(): PendingIntent {
         val intentMain = Intent(this, MainActivity::class.java)
 
 
-         * val intentPlayer = Intent(this, PlayerActivity::class.java)
-         *
+        val intentPlayer = Intent(this, PlayerActivity::class.java)
+
 
         val intents = arrayOf(intentMain, intentPlayer)
 
@@ -756,7 +760,7 @@ class MusicService : BaseMediaService() {
         }
 
     }
-     */
+
     private fun getPendingIntentPrevious(): PendingIntent {
         val intent = Intent(this, MusicService::class.java)
         intent.putExtra("int_code", CODE_PREVIOUS)

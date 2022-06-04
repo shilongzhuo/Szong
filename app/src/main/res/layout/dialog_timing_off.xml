@@ -19,43 +19,43 @@
         android:textColor="@color/colorTextForeground"
         android:textSize="20sp" />
 
-    <com.dirror.music.widget.RightView
+    <com.example.szong.widget.RightView
         android:id="@+id/time0"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         app:text="不开启" />
 
-    <com.dirror.music.widget.RightView
+    <com.example.szong.widget.RightView
         android:id="@+id/time10"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         app:text="10分钟后" />
 
-    <com.dirror.music.widget.RightView
+    <com.example.szong.widget.RightView
         android:id="@+id/time20"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         app:text="20分钟后" />
 
-    <com.dirror.music.widget.RightView
+    <com.example.szong.widget.RightView
         android:id="@+id/time30"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         app:text="30分钟后" />
 
-    <com.dirror.music.widget.RightView
+    <com.example.szong.widget.RightView
         android:id="@+id/time45"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         app:text="45分钟后" />
 
-    <com.dirror.music.widget.RightView
+    <com.example.szong.widget.RightView
         android:id="@+id/time60"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         app:text="60分钟后" />
 
-    <com.dirror.music.widget.RightView
+    <com.example.szong.widget.RightView
         android:id="@+id/timeCustom"
         android:layout_width="match_parent"
         android:layout_height="48dp"

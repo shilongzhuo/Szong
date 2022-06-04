@@ -26,9 +26,10 @@ import com.example.szong.ui.main.widget.MainMenu
 import com.example.szong.util.app.runOnMainThread
 import com.example.szong.util.cache.ACache
 import com.example.szong.util.ui.improve.ViewPager2Util
+import com.example.szong.util.ui.opration.dp
 import com.google.accompanist.appcompattheme.AppCompatTheme
 import com.google.android.material.tabs.TabLayoutMediator
-import dp
+
 import eightbitlab.com.blurview.RenderScriptBlur
 import kotlin.concurrent.thread
 

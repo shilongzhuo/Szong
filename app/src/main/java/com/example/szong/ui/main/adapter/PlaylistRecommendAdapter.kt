@@ -12,8 +12,8 @@ import coil.size.ViewSizeResolver
 import coil.transform.RoundedCornersTransformation
 import com.example.szong.R
 import com.example.szong.api.music.playlist.recommend.netease.PlaylistRecommend
-import com.example.szong.util.dp2px
-import dp
+import com.example.szong.util.ui.opration.dp
+import com.example.szong.util.ui.opration.dp2px
 
 /**
  * 歌单推荐适配器

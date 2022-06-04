@@ -2,7 +2,6 @@ package com.example.szong.api.user.auth.netease
 
 import com.example.szong.config.API_AUTU
 import com.example.szong.manager.user.NeteaseUser
-import com.example.szong.music.netease.data.UserCloudData
 import com.example.szong.util.net.MagicHttp
 import com.example.szong.util.net.status.ErrorCode
 import com.google.gson.Gson

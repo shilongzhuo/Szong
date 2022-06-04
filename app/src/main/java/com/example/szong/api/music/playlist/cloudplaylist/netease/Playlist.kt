@@ -2,11 +2,12 @@ package com.example.szong.api.music.playlist.cloudplaylist.netease
 
 import android.content.Context
 
-import com.dso.ext.averageAssignFixLength
+
 import com.example.szong.config.API_MUSIC_ELEUU
 import com.example.szong.manager.user.NeteaseUser
 import com.example.szong.data.music.standard.StandardSongData
 import com.example.szong.util.app.loge
+import com.example.szong.util.data.averageAssignFixLength
 import com.example.szong.util.net.MagicHttp
 import com.example.szong.util.system.getCurrentTime
 import com.example.szong.widget.toast

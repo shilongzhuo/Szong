@@ -12,7 +12,8 @@ import com.example.szong.data.music.standard.*
 import com.example.szong.api.music.song.url.local.LocalMusic
 import com.example.szong.util.app.loge
 import com.example.szong.util.image.CoilUtil
-import dp
+import com.example.szong.util.ui.opration.dp
+
 
 import org.jetbrains.annotations.TestOnly
 

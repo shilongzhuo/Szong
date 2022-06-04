@@ -15,7 +15,7 @@ class RightView(context: Context, attrs: AttributeSet): androidx.constraintlayou
     private var tvTitle: TextView
 
     init {
-        LayoutInflater.from(context).inflate(R.layout.dirrorx_right_view_layout, this)
+        LayoutInflater.from(context).inflate(R.layout.szongx_right_view_layout, this)
         tvTitle = findViewById(R.id.tvTitle)
         tvTitle.text = title
     }

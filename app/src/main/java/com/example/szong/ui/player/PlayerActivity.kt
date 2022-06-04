@@ -9,6 +9,8 @@ import android.content.IntentFilter
 import android.content.res.Configuration
 import android.graphics.Bitmap
 import android.graphics.Color
+import android.graphics.PorterDuff
+import android.graphics.PorterDuffColorFilter
 import android.os.Handler
 import android.os.Looper
 import android.os.Message
@@ -19,28 +21,33 @@ import androidx.activity.viewModels
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.drawable.toDrawable
+import androidx.core.view.updateLayoutParams
 import androidx.palette.graphics.Palette
+import coil.load
 import coil.size.ViewSizeResolver
 import coil.transform.BlurTransformation
-import com.dirror.lyricviewx.OnPlayClickListener
-import com.dirror.lyricviewx.OnSingleClickListener
-import com.dso.ext.colorMix
 import com.example.szong.App
 import com.example.szong.R
 import com.example.szong.api.music.song.favorite.MyFavorite
 import com.example.szong.config.AppConfig
-import com.example.szong.data.music.standard.SOURCE_LOCAL
-import com.example.szong.data.music.standard.SOURCE_NETEASE
+import com.example.szong.config.AppVersionConfig.APP_PACKAGE_NAME
+
 import com.example.szong.data.music.standard.parseArtist
 import com.example.szong.databinding.ActivityPlayerBinding
 import com.example.szong.service.media.base.BaseMediaService
 import com.example.szong.service.media.device.VolumeManager
 import com.example.szong.ui.base.SlideBackActivity
+import com.example.szong.ui.diolog.TimingOffDialog
 import com.example.szong.util.app.runOnMainThread
 import com.example.szong.util.app.singleClick
 import com.example.szong.util.ui.animation.AnimationUtil
+import com.example.szong.util.ui.opration.asColor
+import com.example.szong.util.ui.opration.asDrawable
+import com.example.szong.util.ui.opration.colorAlpha
+import com.example.szong.util.ui.opration.colorMix
 import com.example.szong.util.ui.theme.DarkThemeUtil
-import com.example.szong.widget.toast
+import com.example.szong.widget.lyricview.OnPlayClickListener
+import com.example.szong.widget.lyricview.OnSingleClickListener
 
 class PlayerActivity : SlideBackActivity() {
 
@@ -156,7 +163,7 @@ class PlayerActivity : SlideBackActivity() {
                 TimingOffDialog(this@PlayerActivity).show()
             }
             // 评论
-            ivComment.setOnClickListener {
+         /**   ivComment.setOnClickListener {
                 App.musicController.value?.getPlayingSongData()?.value?.let {
                     if (it.source != SOURCE_LOCAL) {
                         App.activityManager.startCommentActivity(
@@ -169,6 +176,7 @@ class PlayerActivity : SlideBackActivity() {
                     }
                 }
             }
+            */
             if (!isLandScape) {
                 includePlayerCover.root.setOnLongClickListener {
                     startActivity(Intent(this@PlayerActivity, SongCoverActivity::class.java))
@@ -241,7 +249,7 @@ class PlayerActivity : SlideBackActivity() {
             // 艺术家
             tvArtist.setOnClickListener {
                 // 测试
-                App.musicController.value?.getPlayingSongData()?.value?.let { standardSongData ->
+                /**  App.musicController.value?.getPlayingSongData()?.value?.let { standardSongData ->
                     if (standardSongData.source == SOURCE_NETEASE) {
                         standardSongData.artists?.let {
                             it[0].artistId?.let { artistId ->
@@ -251,7 +259,7 @@ class PlayerActivity : SlideBackActivity() {
                     } else {
                         toast("未找到信息")
                     }
-                }
+                }*/
             }
             // 翻译更改
             ivTranslation.setOnClickListener {
@@ -296,28 +304,29 @@ class PlayerActivity : SlideBackActivity() {
             /**
             // 均衡器
             ivEqualizer.setOnClickListener {
-                singleClick {
-                    SoundEffectDialog(this@PlayerActivity, this@PlayerActivity).show()
-                }
+            singleClick {
+            SoundEffectDialog(this@PlayerActivity, this@PlayerActivity).show()
+            }
             }
             // 更多菜单
             ivMore.setOnClickListener {
-                singleClick {
-                    PlayerMenuMoreDialog(this@PlayerActivity).show()
-                }
+            singleClick {
+            PlayerMenuMoreDialog(this@PlayerActivity).show()
+            }
             }
             // 播放列表
             ivList.setOnClickListener {
-                singleClick {
-                    PlaylistDialog().show(supportFragmentManager, null)
-                }
+            singleClick {
+            PlaylistDialog().show(supportFragmentManager, null)
             }
+            }
+            }*/
+
         }
-            */
     }
 
     override fun initBroadcastReceiver() {
-        // Intent 过滤器，只接收 "com.dirror.foyou.MUSIC_BROADCAST" 标识广播
+        // Intent 过滤器，只接收 "com.szong.foyou.MUSIC_BROADCAST" 标识广播
         val intentFilter = IntentFilter()
         intentFilter.addAction(MUSIC_BROADCAST_ACTION)
         musicBroadcastReceiver = MusicBroadcastReceiver()
@@ -553,7 +562,7 @@ class PlayerActivity : SlideBackActivity() {
                         topMargin = top
                     }
                 }
-                binding.llBase?.let {
+                binding.clBase?.let {
                     it.updateLayoutParams<ConstraintLayout.LayoutParams> {
                         topMargin = top
                     }
@@ -561,7 +570,7 @@ class PlayerActivity : SlideBackActivity() {
             })
             systemWindowInsetBottom.observe(this@PlayerActivity, { bottom ->
                 if (isLandScape) {
-                    binding.llBase?.let {
+                    binding.clBase?.let {
                         it.updateLayoutParams<ConstraintLayout.LayoutParams> {
                             bottomMargin = bottom
                         }
@@ -636,7 +645,7 @@ class PlayerActivity : SlideBackActivity() {
     }
 
     companion object {
-        private const val MUSIC_BROADCAST_ACTION = "com.dirror.music.MUSIC_BROADCAST"
+        private const val MUSIC_BROADCAST_ACTION = "$APP_PACKAGE_NAME.MUSIC_BROADCAST"
         private const val DELAY_MILLIS = 500L
 
         // Handle 消息，播放进度

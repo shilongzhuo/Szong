@@ -2,7 +2,6 @@ package com.example.szong.manager.music
 
 import android.net.Uri
 import android.util.Log
-import com.dso.ext.averageAssignFixLength
 import com.example.szong.api.music.playlist.album.netease.NeteaseAlbumResult
 import com.example.szong.api.music.playlist.cloudplaylist.netease.CompatSearchData
 import com.example.szong.manager.user.NeteaseUser
@@ -21,6 +20,7 @@ import com.example.szong.data.music.standard.*
 import com.example.szong.data.music.DetailPlaylistData
 import com.example.szong.data.music.DetailPlaylistInnerData
 import com.example.szong.data.music.SearchType
+import com.example.szong.util.data.averageAssignFixLength
 import com.example.szong.util.data.getIntOrNull
 import com.example.szong.util.data.getStr
 import com.example.szong.util.net.HttpUtils

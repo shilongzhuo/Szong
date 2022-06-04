@@ -72,9 +72,9 @@ object ServiceSongUrl {
                     success.invoke(PlayUrl.getPlayUrl(song.id ?: ""))
                 }
             }
-            SOURCE_DIRROR -> {
+            SOURCE_szong -> {
                 GlobalScope.launch {
-                    success.invoke(song.dirrorInfo?.url)
+                    success.invoke(song.szongInfo?.url)
                 }
             }
             SOURCE_KUWO -> {

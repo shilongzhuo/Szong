@@ -1,7 +1,7 @@
 
 package com.example.szong.api.sentence
 import android.util.Log
-import isChinese
+import com.example.szong.util.data.isChinese
 
 /**
  * 优化来自一言的句子单例

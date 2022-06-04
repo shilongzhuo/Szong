@@ -1,6 +1,6 @@
 package com.example.szong.plugin;
 
-import static com.example.szong.util.TopLevelFuntionKt.toast;
+import static com.example.szong.widget.ToastKt.toast;
 
 import android.app.Activity;
 import android.os.Build;
@@ -129,7 +129,7 @@ public class PluginSupport {
             pluginName = pluginName.replace(".dex", "");
             DexClassLoader classLoader = new DexClassLoader(dexFile.getAbsolutePath(), getTargetPath() + "/" + pluginName, null, PluginSupport.class.getClassLoader());
 
-            String mainClass = "com.dirror.music.plugin." + pluginName.substring(0, 1).toUpperCase() + pluginName.substring(1) + "Main";
+            String mainClass = "com.szong.music.plugin." + pluginName.substring(0, 1).toUpperCase() + pluginName.substring(1) + "Main";
             Class<?> pluginMain = classLoader.loadClass(mainClass);
             Method pluginMethods = pluginMain.getMethod("pluginMethods");
             Object result = pluginMethods.invoke(null);

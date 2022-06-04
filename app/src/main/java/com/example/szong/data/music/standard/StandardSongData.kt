@@ -26,7 +26,7 @@ data class StandardSongData(
     var localInfo: LocalInfo?,
 
     @Embedded
-    var dirrorInfo: DirrorInfo?) : Parcelable {
+    var szongInfo: SzongInfo?) : Parcelable {
 
     @Ignore
     constructor() : this(
@@ -63,10 +63,10 @@ data class StandardSongData(
     ) : Parcelable
 
     /**
-     * Dirror 源拓展信息
+     * szong 源拓展信息
      */
     @Parcelize
-    data class DirrorInfo(
+    data class SzongInfo(
         val url: String?
     ) : Parcelable
 
@@ -118,7 +118,7 @@ data class PackedSongList(
 const val SOURCE_LOCAL = 1
 const val SOURCE_NETEASE = 2
 const val SOURCE_QQ = 3
-const val SOURCE_DIRROR = 4
+const val SOURCE_szong = 4
 const val SOURCE_KUWO = 5
 const val SOURCE_NETEASE_CLOUD = 6
 

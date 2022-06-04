@@ -9,7 +9,8 @@ import coil.imageLoader
 import coil.request.ImageRequest
 import com.example.szong.App
 import com.example.szong.R
-import dp
+import com.example.szong.util.ui.opration.dp
+
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 

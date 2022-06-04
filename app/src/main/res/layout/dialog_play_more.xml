@@ -29,32 +29,32 @@
             android:layout_width="wrap_content"
             android:layout_height="56dp" />
 
-        <com.dirror.music.widget.ItemLayout
+        <com.example.szong.widget.ItemLayout
             android:id="@+id/itemAddNeteaseFavorite"
             app:text="@string/add_to_netease_favorite"
             android:layout_width="match_parent"
             android:layout_height="56dp" />
 
-        <com.dirror.music.widget.ItemLayout
+        <com.example.szong.widget.ItemLayout
             android:id="@+id/itemPlayHistory"
             app:text="@string/history"
             android:layout_width="match_parent"
             android:layout_height="56dp" />
 
-        <com.dirror.music.widget.ItemLayout
+        <com.example.szong.widget.ItemLayout
             android:id="@+id/itemSongInfo"
             android:layout_width="match_parent"
             android:layout_height="56dp"
             app:text="@string/song_info"/>
 
-        <com.dirror.music.widget.ItemLayout
+        <com.example.szong.widget.ItemLayout
             android:id="@+id/timeClose"
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:visibility="gone"
             app:text="定时关闭">
 
-        </com.dirror.music.widget.ItemLayout>
+        </com.example.szong.widget.ItemLayout>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

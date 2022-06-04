@@ -13,39 +13,39 @@
         android:paddingTop="16dp"
         android:paddingBottom="16dp">
 
-        <com.dirror.music.widget.ValueView
+        <com.example.szong.widget.ValueView
             android:id="@+id/valueViewId"
             android:layout_width="match_parent"
             android:layout_height="42dp"
             app:text="@string/song_id" />
 
-        <com.dirror.music.widget.ValueView
+        <com.example.szong.widget.ValueView
             android:id="@+id/valueViewSource"
             android:layout_width="match_parent"
             android:layout_height="42dp"
             app:text="@string/source">
 
-        </com.dirror.music.widget.ValueView>
+        </com.example.szong.widget.ValueView>
 
-        <com.dirror.music.widget.ValueView
+        <com.example.szong.widget.ValueView
             android:id="@+id/valueViewBitrate"
             android:layout_width="match_parent"
             android:layout_height="42dp"
             app:text="@string/bit_rate" />
 
-        <com.dirror.music.widget.ValueView
+        <com.example.szong.widget.ValueView
             android:id="@+id/valueViewSize"
             android:layout_width="match_parent"
             android:layout_height="42dp"
             app:text="@string/size" />
 
-        <com.dirror.music.widget.ValueView
+        <com.example.szong.widget.ValueView
             android:id="@+id/valueViewType"
             android:layout_width="match_parent"
             android:layout_height="42dp"
             app:text="@string/type" />
 
-        <com.dirror.music.widget.ValueView
+        <com.example.szong.widget.ValueView
             android:id="@+id/valueViewData"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

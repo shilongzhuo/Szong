@@ -1,10 +1,11 @@
 package com.example.szong.manager.user
 
-import EMPTY
+
 import android.os.Parcelable
 import com.example.szong.App.Companion.mmkv
 import com.example.szong.config.AppConfig
 import com.example.szong.api.user.auth.netease.UserDetailData
+import com.example.szong.util.data.EMPTY
 import kotlinx.parcelize.Parcelize
 
 

@@ -1,9 +1,7 @@
-package com.example.szong.service.media.music
+package com.example.szong.widget.lyricview
 
-import android.animation.ValueAnimator
 import android.text.TextUtils
 import android.text.format.DateUtils
-import com.dirror.lyricviewx.LyricEntry
 import java.io.*
 import java.net.HttpURLConnection
 import java.net.URL

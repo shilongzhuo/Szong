@@ -6,14 +6,15 @@ import com.example.szong.data.music.standard.StandardSongData
 import com.example.szong.plugin.PluginConstants
 import com.example.szong.plugin.PluginSupport
 import com.example.szong.util.app.loge
+import com.example.szong.util.data.getIntOrNull
+import com.example.szong.util.data.getStr
 
 import com.example.szong.util.net.HttpUtils
 import com.example.szong.util.net.MagicHttp
 import com.example.szong.widget.toast
 
 import com.google.gson.Gson
-import getIntOrNull
-import getStr
+
 import org.json.JSONObject
 import java.lang.Exception
 
