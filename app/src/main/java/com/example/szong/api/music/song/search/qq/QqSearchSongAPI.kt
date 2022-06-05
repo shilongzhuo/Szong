@@ -6,7 +6,7 @@ import com.example.szong.util.net.MagicHttp
 import com.google.gson.Gson
 
 
-object SearchSong {
+object QqSearchSongAPI {
 
     fun search(keywords: String, success: (ArrayList<StandardSongData>) -> Unit) {
         val url = "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?aggr=1&cr=1&flag_qc=0&p=1&n=20&w=${keywords}"

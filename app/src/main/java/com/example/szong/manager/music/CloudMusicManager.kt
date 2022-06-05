@@ -4,7 +4,7 @@ import android.util.Log
 import androidx.annotation.Keep
 import com.example.szong.api.music.lyric.netease.LyricData
 import com.example.szong.App
-import com.example.szong.api.music.artist.ArtistsData
+import com.example.szong.api.music.artist.netease.ArtistsData
 import com.example.szong.api.music.song.search.netease.SearchDefaultData
 import com.example.szong.api.music.song.search.netease.SearchHotData
 import com.example.szong.api.music.song.url.netease.SongUrlData

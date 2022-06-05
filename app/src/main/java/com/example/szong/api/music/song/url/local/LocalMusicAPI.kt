@@ -26,7 +26,7 @@ import java.lang.Exception
 /**
  * 本地音乐
  */
-object LocalMusic {
+object LocalMusicAPI {
 
     // 未知错误 query failed, handle error.
     private const val ERROR_UNKNOWN = 0

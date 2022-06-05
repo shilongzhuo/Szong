@@ -22,7 +22,7 @@ import java.util.concurrent.TimeUnit
 /**
  * 获取网易云歌单全部，对于大型歌单也要成功
  */
-object Playlist {
+object PlaylistAPI {
 
     private const val SPLIT_PLAYLIST_NUMBER = 1000 // 切割歌单
     private const val CHEATING_CODE = -460 // Cheating 错误
@@ -161,9 +161,9 @@ object Playlist {
                 override fun onResponse(call: Call, response: Response) {
                     response.body()?.byteStream()?.let { inputStream ->
                         val reader = BufferedReader(InputStreamReader(inputStream))
-                        var playlistDetail: PlaylistDetail? = null
+                        var playlistDetail: PlaylistDetailAPI? = null
                         try {
-                            playlistDetail = Gson().fromJson(reader, PlaylistDetail::class.java)
+                            playlistDetail = Gson().fromJson(reader, PlaylistDetailAPI::class.java)
                             //Log.i(SongPlaylistViewModel.TAG, "Gson 解析完成 ${System.currentTimeMillis()}")
                         } catch (e: Exception) {
 

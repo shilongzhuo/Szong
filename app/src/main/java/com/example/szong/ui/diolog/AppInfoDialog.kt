@@ -4,7 +4,6 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Build
 import com.example.szong.App
-import com.example.szong.api.sentence.foyoulibrary.FoyouLibrary
 import com.example.szong.database.room.AppDatabase
 import com.example.szong.databinding.DialogTextInfoBinding
 import com.example.szong.ui.base.BaseBottomSheetDialog
@@ -30,7 +29,6 @@ class AppInfoDialog(context: Context) : BaseBottomSheetDialog(context) {
             tvText.text = """
                 [app.build   ] ${getVisionCode()}
                 [is debug    ] ${Secure.isDebug()}
-                [foyou.ver   ] ${FoyouLibrary.VERSION}
                 [database.ver] ${AppDatabase.DATABASE_VERSION}
                 [model       ] ${Build.MODEL}
                 [android.ver ] ${Build.VERSION.RELEASE}

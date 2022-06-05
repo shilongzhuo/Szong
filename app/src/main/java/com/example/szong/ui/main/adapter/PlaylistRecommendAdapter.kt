@@ -12,7 +12,7 @@ import coil.load
 import coil.size.ViewSizeResolver
 import coil.transform.RoundedCornersTransformation
 import com.example.szong.R
-import com.example.szong.api.music.playlist.recommend.netease.PlaylistRecommend
+import com.example.szong.api.music.playlist.recommend.netease.RecommendAPI
 import com.example.szong.ui.playlist.SongPlaylistActivity
 import com.example.szong.ui.playlist.viewmodel.TAG_NETEASE
 import com.example.szong.util.ui.opration.dp
@@ -22,7 +22,7 @@ import com.example.szong.util.ui.opration.dp2px
  * 歌单推荐适配器
  * MainActivity Homefragment 歌单推荐
  */
-class PlaylistRecommendAdapter(private val playlistRecommendDataResult: ArrayList<PlaylistRecommend.PlaylistRecommendDataResult>) : RecyclerView.Adapter<PlaylistRecommendAdapter.ViewHolder>() {
+class PlaylistRecommendAdapter(private val playlistRecommendDataResult: ArrayList<RecommendAPI.PlaylistRecommendDataResult>) : RecyclerView.Adapter<PlaylistRecommendAdapter.ViewHolder>() {
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val clPlaylist: ConstraintLayout = view.findViewById(R.id.clPlaylist)

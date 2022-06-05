@@ -2,7 +2,7 @@ package com.example.szong.ui.user.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.szong.api.user.auth.netease.UserCloud
+import com.example.szong.api.user.auth.netease.UserCloudAPI
 import com.example.szong.api.user.auth.netease.toStandard
 import com.example.szong.data.music.standard.StandardSongData
 import com.example.szong.util.app.runOnMainThread
@@ -33,7 +33,7 @@ class UserCloudViewModel : ViewModel() {
         }
         isLoading = true
         // request data
-        UserCloud.getUserCloud(offset, {
+        UserCloudAPI.getUserCloud(offset, {
             runOnMainThread {
                 if (it.hasMore) {
                     offset += 50

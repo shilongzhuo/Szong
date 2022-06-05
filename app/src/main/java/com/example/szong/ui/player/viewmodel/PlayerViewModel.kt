@@ -6,7 +6,7 @@ import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.szong.App
-import com.example.szong.api.music.song.favorite.MyFavorite
+import com.example.szong.api.music.song.favorite.local.MyFavoriteAPI
 import com.example.szong.config.AppConfig
 import com.example.szong.data.music.LyricViewData
 import com.example.szong.data.music.SearchLyric
@@ -139,12 +139,12 @@ class PlayerViewModel: ViewModel() {
      */
     fun likeMusic(success: (Boolean) -> Unit) {
         App.musicController.value?.getPlayingSongData()?.value?.let {
-            MyFavorite.isExist(it) { exist ->
+            MyFavoriteAPI.isExist(it) { exist ->
                 if (exist) {
-                    MyFavorite.deleteById(it.id?:"")
+                    MyFavoriteAPI.deleteById(it.id?:"")
                     success.invoke(false)
                 } else {
-                    MyFavorite.addSong(it)
+                    MyFavoriteAPI.addSong(it)
                     success.invoke(true)
                 }
             }

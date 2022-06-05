@@ -4,12 +4,7 @@ import com.example.szong.App
 import com.example.szong.data.music.standard.StandardPlaylistData
 import com.example.szong.data.music.standard.StandardSongData
 
-/**
- * 本地歌单类
- * @author Moriafly
- * @since 2021年1月11日15:18:55
- */
-object LocalPlaylist {
+object LocalPlaylistAPI {
 
     private const val ARRAY_LOCAL_PLAYLIST = "array_local_playlist"
 

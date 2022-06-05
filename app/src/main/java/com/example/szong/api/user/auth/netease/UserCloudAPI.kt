@@ -10,7 +10,7 @@ import okhttp3.FormBody
 /**
  * 用户云盘数据
  */
-object UserCloud {
+object UserCloudAPI {
 
     private const val TAG = "UserCloud"
 

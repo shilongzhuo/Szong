@@ -9,7 +9,7 @@ import androidx.core.net.toUri
 import com.example.szong.R
 import com.example.szong.config.API_FCZBL_VIP
 import com.example.szong.data.music.standard.*
-import com.example.szong.api.music.song.url.local.LocalMusic
+import com.example.szong.api.music.song.url.local.LocalMusicAPI
 import com.example.szong.util.app.loge
 import com.example.szong.util.image.CoilUtil
 import com.example.szong.util.ui.opration.dp
@@ -69,7 +69,7 @@ object SongPicture {
             }
             SOURCE_LOCAL -> {
                 songData.imageUrl?.let {
-                    val bitmap = LocalMusic.getBitmapFromUir(context, it.toUri())
+                    val bitmap = LocalMusicAPI.getBitmapFromUir(context, it.toUri())
                     if (bitmap != null) {
                         success.invoke(bitmap)
                     }

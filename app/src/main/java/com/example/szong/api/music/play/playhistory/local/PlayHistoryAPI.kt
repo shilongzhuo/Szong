@@ -10,7 +10,7 @@ import org.jetbrains.annotations.TestOnly
 /**
  * 播放历史单例类
  */
-object PlayHistory {
+object PlayHistoryAPI {
 
     private var playHistory = PlayHistoryData(ArrayList())
 
@@ -31,7 +31,7 @@ object PlayHistory {
     /**
      * 读取播放历史
      */
-    suspend fun readPlayHistory(): ArrayList<StandardSongData> {
+    fun readPlayHistory(): ArrayList<StandardSongData> {
         playHistory = App.mmkv.decodeParcelable(AppConfig.PLAY_HISTORY, PlayHistoryData::class.java, PlayHistoryData(
             ArrayList()
         )

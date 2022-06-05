@@ -1,6 +1,7 @@
 package com.example.szong.util.security
 
 import android.content.Context
+import com.example.szong.util.data.md5
 import java.io.IOException
 import java.security.MessageDigest
 import java.security.NoSuchAlgorithmException
@@ -10,12 +11,13 @@ import java.util.zip.ZipFile
 /**
  * SkySecure 安全防护
  * 字符串 MD5 加密、Xposed 监测、应用名称监测
- * Dex 文件完整性校验（配合联网校验）
  */
 object SkySecure: SkySecureInterface {
 
+    val appMd5 = "Szong".md5()
+
     fun getAppNameMd5(): String {
-        return "9884b247104cbdb489aeeaca91f49584"
+        return appMd5
     }
 
     override fun getMD5(string: String): String {

@@ -8,7 +8,7 @@ import com.google.gson.Gson
 /**
  * 网易音乐排行榜
  */
-object NeteaseTopList {
+object TopListAPI {
 
     private const val API = "${API_AUTU}/toplist/detail"
 

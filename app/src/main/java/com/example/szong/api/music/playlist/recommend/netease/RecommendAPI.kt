@@ -8,7 +8,7 @@ import com.google.gson.Gson
 /**
  * 获取网易云推荐歌单
  */
-object PlaylistRecommend {
+object RecommendAPI {
 
     fun getPlaylistRecommend(context: Context, success: (ArrayList<PlaylistRecommendDataResult>) -> Unit, failure: () -> Unit) {
 

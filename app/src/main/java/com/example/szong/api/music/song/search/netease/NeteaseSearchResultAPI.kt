@@ -1,8 +1,22 @@
 package com.example.szong.api.music.song.search.netease
 
 import com.example.szong.data.music.standard.*
-import com.example.szong.api.music.song.search.Utils
+import com.example.szong.util.data.decode.Base64
+import com.example.szong.util.data.decode.MD5
+import kotlin.experimental.xor
 
+private val byte1 = "3go8&$8*3*3h0k(2)2".toByteArray()
+
+fun getNeteasePicUrl(id: Long): String {
+    val byte2 = id.toString().toByteArray()
+    for (i in byte2.indices) {
+        byte2[i] = byte2[i] xor byte1[i % byte1.size]
+    }
+    val m = MD5.getMD5Code(byte2)
+    var result = Base64.encode(m!!)
+    result = result.replace("/", "_").replace("+", "-")
+    return "https://p3.music.126.net/$result/$id.jpg"
+}
 
 class NeteaseSearchResult(
     val code: Int,
@@ -117,7 +131,7 @@ data class Al(
     val picUrl: String?,
 ) {
     fun getImageUrl():String {
-        return picUrl?: Utils.getNeteasePicUrl(pic_str)
+        return picUrl?: getNeteasePicUrl(pic_str)
     }
 }
 

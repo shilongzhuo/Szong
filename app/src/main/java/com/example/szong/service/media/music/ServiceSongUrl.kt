@@ -3,10 +3,10 @@ package com.example.szong.service.media.music
 import android.content.ContentUris
 import android.net.Uri
 import com.example.szong.App
-import com.example.szong.manager.music.Api
+import com.example.szong.manager.music.ApiManager
 import com.example.szong.config.AppConfig
-import com.example.szong.api.music.song.search.kuwo.SearchSong
-import com.example.szong.api.music.song.url.netease.SongUrl
+import com.example.szong.api.music.song.search.kuwo.KuSearchSongAPI
+import com.example.szong.api.music.song.url.netease.NeteaseSongUrlAPI
 import com.example.szong.api.music.song.url.qq.PlayUrl
 import com.example.szong.data.music.standard.*
 import com.example.szong.data.music.LyricViewData
@@ -53,7 +53,7 @@ object ServiceSongUrl {
                     } else {
                         var url = ""
                         if (url.isEmpty())
-                            SongUrl.getSongUrlCookie(song.id ?: "") {
+                            NeteaseSongUrlAPI.getSongUrlCookie(song.id ?: "") {
                                 success.invoke(it)
                             }
                         else
@@ -79,12 +79,12 @@ object ServiceSongUrl {
             }
             SOURCE_KUWO -> {
                 GlobalScope.launch {
-                    val url = SearchSong.getUrl(song.id ?: "")
+                    val url = KuSearchSongAPI.getUrl(song.id ?: "")
                     success.invoke(url)
                 }
             }
             SOURCE_NETEASE_CLOUD -> {
-                SongUrl.getSongUrlCookie(song.id ?: "") {
+                NeteaseSongUrlAPI.getSongUrlCookie(song.id ?: "") {
                     success.invoke(it)
                 }
             }
@@ -110,12 +110,12 @@ object ServiceSongUrl {
     }
 
     suspend fun getUrlFromOther(song: StandardSongData): String {
-        Api.getFromKuWo(song)?.apply {
-            SearchSong.getUrl(id ?: "").let {
+        ApiManager.getFromKuWo(song)?.apply {
+            KuSearchSongAPI.getUrl(id ?: "").let {
                 return it
             }
         }
-        Api.getFromQQ(song)?.apply {
+        ApiManager.getFromQQ(song)?.apply {
             PlayUrl.getPlayUrl(id ?: "").let {
                 return it
             }

@@ -48,6 +48,10 @@ android {
         kotlinCompilerExtensionVersion = compose_version
         kotlinCompilerVersion = kotlin_version
     }
+    packagingOptions {
+        exclude 'lib/*/libRSSupport.so'
+        exclude 'META-INF/library_release.kotlin_module'
+    }
 
 }
 

@@ -27,8 +27,8 @@ import com.example.szong.App.Companion.context
 import com.example.szong.App.Companion.mmkv
 import com.example.szong.R
 import com.example.szong.config.AppConfig
-import com.example.szong.api.music.play.playhistory.local.PlayHistory
-import com.example.szong.api.music.song.fm.netease.PersonalFM
+import com.example.szong.api.music.play.playhistory.local.PlayHistoryAPI
+import com.example.szong.api.music.song.fm.netease.PersonalFMAPI
 import com.example.szong.data.music.LyricEntry
 import com.example.szong.data.music.standard.StandardSongData
 import com.example.szong.data.music.standard.parse
@@ -335,7 +335,7 @@ class MusicService : BaseMediaService() {
                 mmkv.encode(AppConfig.PLAY_MODE, mode)
                 sendMusicBroadcast()
                 // 获取 FM
-                PersonalFM.get({
+                PersonalFMAPI.get({
                     runOnMainThread {
                         PlayQueue.setNormal(it)
                         playMusic(it[0])
@@ -469,7 +469,7 @@ class MusicService : BaseMediaService() {
             }
             // 添加到播放历史
             getPlayingSongData().value?.let {
-                PlayHistory.addPlayHistory(it)
+                PlayHistoryAPI.addPlayHistory(it)
             }
         }
 
@@ -625,7 +625,7 @@ class MusicService : BaseMediaService() {
                 getPlayingSongData().value?.let {
                     val index = PlayQueue.currentQueue.value?.indexOf(it)
                     if (index == PlayQueue.currentQueue.value?.lastIndex) {
-                        PersonalFM.get({ list ->
+                        PersonalFMAPI.get({ list ->
                             runOnMainThread {
                                 PlayQueue.setNormal(list)
                                 playMusic(list[0])

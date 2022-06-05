@@ -10,7 +10,7 @@ import com.google.gson.Gson
 import okhttp3.FormBody
 import kotlin.Exception
 
-object PersonalFM {
+object PersonalFMAPI {
 
     private const val API = "https://music.163.com/api/v1/radio/get"
     private const val TEST_API = "$API_AUTU/personal_fm"

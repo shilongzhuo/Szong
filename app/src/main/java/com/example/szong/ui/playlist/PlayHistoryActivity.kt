@@ -1,7 +1,7 @@
 package com.example.szong.ui.playlist
 
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.szong.api.music.play.playhistory.local.PlayHistory
+import com.example.szong.api.music.play.playhistory.local.PlayHistoryAPI
 import com.example.szong.databinding.ActivityPlayHistoryBinding
 import com.example.szong.ui.base.BaseActivity
 import com.example.szong.ui.diolog.SongMenuDialog
@@ -29,7 +29,7 @@ class PlayHistoryActivity : BaseActivity() {
                 }
             }.apply {
                 GlobalScope.launch {
-                    submitList(PlayHistory.readPlayHistory().toList())
+                    submitList(PlayHistoryAPI.readPlayHistory().toList())
                 }
             }
         }

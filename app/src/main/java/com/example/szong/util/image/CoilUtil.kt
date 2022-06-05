@@ -41,22 +41,6 @@ object CoilUtil {
     }
 
     fun load(data: Any, success: (bitmap: Bitmap) -> Unit) {
-        // Coil
-//        val request = ImageRequest.Builder(context)
-//            .data(url)
-//            .target(
-//                onStart = { placeholder ->
-//                    // Handle the placeholder drawable.
-//                },
-//                onSuccess = { result ->
-//                    // Handle the successful result.
-//                },
-//                onError = { error ->
-//                    // Handle the error drawable.
-//                }
-//            )
-//            .build()
-//        context.imageLoader.enqueue(request)
 
         GlobalScope.launch {
             val request = ImageRequest.Builder(App.context)

@@ -14,12 +14,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.szong.App
 import com.example.szong.App.Companion.mmkv
 import com.example.szong.R
-import com.example.szong.api.music.song.search.qq.SearchSong
+import com.example.szong.api.music.song.search.qq.QqSearchSongAPI
 import com.example.szong.config.AppConfig
 import com.example.szong.data.music.SearchType
 import com.example.szong.data.music.standard.StandardAlbum
 import com.example.szong.databinding.ActivitySearchBinding
-import com.example.szong.manager.music.Api
+import com.example.szong.manager.music.ApiManager
 import com.example.szong.ui.base.BaseActivity
 import com.example.szong.ui.playlist.SongPlaylistActivity
 import com.example.szong.ui.playlist.viewmodel.TAG_NETEASE
@@ -229,7 +229,7 @@ class SearchActivity : BaseActivity() {
             when (searchViewModel.searchEngine.value) {
                 SearchViewModel.ENGINE_NETEASE -> {
                     GlobalScope.launch {
-                        val result = Api.searchMusic(keywords, searchType)
+                        val result = ApiManager.searchMusic(keywords, searchType)
                         if (result != null) {
                             withContext(Dispatchers.Main) {
                                 when (searchType) {
@@ -243,12 +243,12 @@ class SearchActivity : BaseActivity() {
                     }
                 }
                 SearchViewModel.ENGINE_QQ -> {
-                    SearchSong.search(keywords) {
+                    QqSearchSongAPI.search(keywords) {
                         initRecycleView(it)
                     }
                 }
                 SearchViewModel.ENGINE_KUWO -> {
-                    com.example.szong.api.music.song.search.kuwo.SearchSong.search(keywords) {
+                    com.example.szong.api.music.song.search.kuwo.KuSearchSongAPI.search(keywords) {
                         initRecycleView(it)
                     }
                 }

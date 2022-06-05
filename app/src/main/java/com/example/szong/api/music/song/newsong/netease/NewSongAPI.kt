@@ -11,7 +11,7 @@ import java.lang.Exception
 /**
  * 新歌速递
  */
-object NewSong {
+object NewSongAPI {
 
     fun getNewSong(context: Context, success: (ArrayList<StandardSongData>) -> Unit) {
 

@@ -4,6 +4,7 @@ import android.content.Intent
 import com.example.szong.App
 import com.example.szong.databinding.ActivityLoginByUidBinding
 import com.example.szong.ui.base.BaseActivity
+import com.example.szong.util.app.loge
 import com.example.szong.widget.toast
 
 import java.util.regex.Pattern
@@ -33,7 +34,7 @@ class LoginByUidActivity : BaseActivity() {
                     netease = netease.subSequence(index + 3, netease.length).toString()
                 }
                 netease = keepDigital(netease)
-                // loge("数字：${netease}")
+                loge("数字：${netease}")
                 if (netease != "") {
                     App.cloudMusicManager.loginByUid(netease) {
                         // 发送广播

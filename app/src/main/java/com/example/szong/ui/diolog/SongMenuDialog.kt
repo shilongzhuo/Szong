@@ -3,7 +3,7 @@ package com.example.szong.ui.diolog
 import android.app.Activity
 import android.content.Context
 import com.example.szong.App
-import com.example.szong.api.music.song.favorite.MyFavorite
+import com.example.szong.api.music.song.favorite.local.MyFavoriteAPI
 import com.example.szong.data.music.standard.SOURCE_NETEASE
 import com.example.szong.data.music.standard.StandardSongData
 import com.example.szong.databinding.DialogSongMenuBinding
@@ -41,7 +41,7 @@ constructor(
             }
             // 添加到本地我喜欢
             itemAddLocalMyFavorite.setOnClickListener {
-                MyFavorite.addSong(songData)
+                MyFavoriteAPI.addSong(songData)
                 dismiss()
             }
             // 添加到网易云我喜欢

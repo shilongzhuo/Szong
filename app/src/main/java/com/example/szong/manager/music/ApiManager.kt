@@ -7,16 +7,15 @@ import android.net.Uri
 import android.util.Log
 import com.example.szong.App
 import com.example.szong.R
-import com.example.szong.api.music.playlist.album.netease.NeteaseAlbumResult
+import com.example.szong.api.music.playlist.album.netease.AlbumAPI
 import com.example.szong.api.music.playlist.cloudplaylist.netease.CompatSearchData
 import com.example.szong.manager.user.NeteaseUser
-import com.example.szong.api.music.playlist.cloudplaylist.netease.Playlist
+import com.example.szong.api.music.playlist.cloudplaylist.netease.PlaylistAPI
 import com.example.szong.api.music.playlist.cloudplaylist.netease.compatSearchDataToStandardPlaylistData
 import com.example.szong.api.music.song.search.netease.ArtistInfoResult
 import com.example.szong.api.music.song.search.netease.ArtistsSongs
 import com.example.szong.api.music.song.search.netease.NeteaseSearchResult
-import com.example.szong.api.music.song.search.Utils
-import com.example.szong.api.music.song.search.qq.SearchSong
+import com.example.szong.api.music.song.search.qq.QqSearchSongAPI
 import com.example.szong.api.user.auth.netease.NeteaseGetKey
 import com.example.szong.api.user.auth.netease.NeteaseLoginResult
 import com.example.szong.api.user.auth.netease.NeteaseQRCodeResult
@@ -39,7 +38,17 @@ import kotlin.collections.ArrayList
 import kotlin.collections.HashMap
 
 
-object Api {
+fun toMap(vararg params: String): Map<String, String> {
+    val map = HashMap<String, String>()
+    var i = 0
+    while (i < params.size) {
+        map[params[i]] = params[i + 1]
+        i += 2
+    }
+    return map
+}
+
+object ApiManager {
 
     private const val TAG = "API"
 
@@ -58,7 +67,7 @@ object Api {
             params["cookie"] = NeteaseUser.cookie
         }
         val url = "${getDefaultApi()}/playlist/detail?hash=${params.hashCode()}"
-        val result = HttpUtils.postWithCache(url, params, Playlist.PlaylistData::class.java, useCache)
+        val result = HttpUtils.postWithCache(url, params, PlaylistAPI.PlaylistData::class.java, useCache)
         val trackIds = ArrayList<Long>()
         result?.result?.playlist?.trackIds?.forEach {
                 trackId -> trackIds.add(trackId.id)
@@ -105,11 +114,7 @@ object Api {
     }
 
     suspend fun getAlbumSongs(id:Long): StandardAlbumPackage? {
-        val url = "${getDefaultApi()}/album?id=${id}"
-        HttpUtils.get(url, NeteaseAlbumResult::class.java)?.let {
-            return StandardAlbumPackage(it.album.switchToStandard(), it.switchToStandardSongs())
-        }
-        return null
+        return AlbumAPI.getAlbumSongs(id)
     }
 
     suspend fun getSingerSongs(id: Long): StandardSingerPackage? {
@@ -189,7 +194,7 @@ object Api {
         return null
     }
 
-    private suspend fun searchFromQQ(keywords: String): SearchSong.QQSearch? {
+    private suspend fun searchFromQQ(keywords: String): QqSearchSongAPI.QQSearch? {
         val url = "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?aggr=1&cr=1&flag_qc=0&p=1&n=20&w=${keywords}"
         HttpUtils.get(url, String::class.java)?.let {
             var response = it.replace("callback(", "")
@@ -197,7 +202,7 @@ object Api {
                 response = response.substring(0, response.lastIndex)
             }
             try {
-                return Gson().fromJson(response, SearchSong.QQSearch::class.java)
+                return Gson().fromJson(response, QqSearchSongAPI.QQSearch::class.java)
             } catch (e: JsonSyntaxException) {
                 e.printStackTrace()
             }
@@ -226,7 +231,7 @@ object Api {
                 (0 until songList.length()).forEach {
                     val songInfo = songList[it] as JSONObject
                     standardSongDataList.add(
-                        com.example.szong.api.music.song.search.kuwo.SearchSong.KuwoSearchData.SongData(
+                        com.example.szong.api.music.song.search.kuwo.KuSearchSongAPI.KuwoSearchData.SongData(
                             songInfo.getIntOrNull("rid").toString(),
                             songInfo.getStr("name", ""),
                             songInfo.getStr("artist", ""),
@@ -255,7 +260,7 @@ object Api {
     }
 
     suspend fun getUserInfo(cookie: String): NeteaseUserInfo? {
-        return HttpUtils.post("${getLoginUrl()}/user/account", Utils.toMap("cookie", cookie) , NeteaseUserInfo::class.java)
+        return HttpUtils.post("${getLoginUrl()}/user/account", toMap("cookie", cookie) , NeteaseUserInfo::class.java)
     }
 
     private fun getLoginUrl() :String {

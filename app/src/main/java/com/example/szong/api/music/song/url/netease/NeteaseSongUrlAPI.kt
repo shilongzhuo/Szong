@@ -6,7 +6,7 @@ import com.example.szong.util.net.MagicHttp
 import com.google.gson.Gson
 import okhttp3.FormBody
 
-object SongUrl {
+object NeteaseSongUrlAPI {
 
     const val API = "${API_AUTU}/song/url?id=33894312"
 

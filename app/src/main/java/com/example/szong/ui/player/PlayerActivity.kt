@@ -31,7 +31,7 @@ import coil.size.ViewSizeResolver
 import coil.transform.BlurTransformation
 import com.example.szong.App
 import com.example.szong.R
-import com.example.szong.api.music.song.favorite.MyFavorite
+import com.example.szong.api.music.song.favorite.local.MyFavoriteAPI
 import com.example.szong.config.AppConfig
 import com.example.szong.data.music.standard.SOURCE_LOCAL
 import com.example.szong.data.music.standard.SOURCE_NETEASE
@@ -155,7 +155,10 @@ class PlayerActivity : SlideBackActivity() {
             // 返回按钮
             ivBack.setOnClickListener { finish() }
             // 开始 / 暂停播放按钮
-            ivPlay.setOnClickListener { playViewModel.changePlayState() }
+            ivPlay.setOnClickListener {
+                toast("PLAY")
+                playViewModel.changePlayState()
+            }
             // 上一曲
             ivLast.setOnClickListener { playViewModel.playLast() }
             // 下一曲
@@ -355,7 +358,7 @@ class PlayerActivity : SlideBackActivity() {
                         // 刷新歌词
                         playViewModel.updateLyric()
                         // 是否有红心
-                        MyFavorite.isExist(it) { exist ->
+                        MyFavoriteAPI.isExist(it) { exist ->
                             runOnMainThread {
                                 playViewModel.heart.value = exist
                             }

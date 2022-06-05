@@ -11,7 +11,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.szong.R
-import com.example.szong.api.music.song.url.local.LocalMusic
+import com.example.szong.api.music.song.url.local.LocalMusicAPI
 import com.example.szong.data.music.standard.StandardSongData
 import com.example.szong.databinding.ActivityLocalMusicBinding
 import com.example.szong.ui.base.BaseActivity
@@ -32,7 +32,7 @@ class LocalMusicActivity : BaseActivity() {
             val songList = MutableLiveData<ArrayList<StandardSongData>>()
 
             fun scanLocalMusic(context: Context) {
-                LocalMusic.scanLocalMusic(context, {
+                LocalMusicAPI.scanLocalMusic(context, {
                     runOnMainThread {
                         /**
                         binding.titleBar.setTitleBarText("本地音乐(${it.size})")

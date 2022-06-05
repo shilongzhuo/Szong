@@ -44,7 +44,7 @@ class App : Application() {
             DarkThemeUtil.setDarkTheme(true)
         }
 
-        realIP = "0.0.0.0"
+        realIP = "175.16.1.195"
         coroutineScope.launch {
             val lastIP = "LAST_IP"
             val lastIPExpiredTime = "LAST_IP_TIME" // 过期时间

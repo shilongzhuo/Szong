@@ -64,6 +64,10 @@ object ActivityManager{
 //            R.anim.anim_no_anim
 //        )
     }
+    fun startLoginByUidActivity(activity: Activity) {
+        val intent = Intent(activity, LoginByUidActivity::class.java)
+        activity.startActivityForResult(intent, 0)
+    }
 
    fun startSettingsActivity(activity: Activity) {
         val intent = Intent(activity, SettingsActivity::class.java)
@@ -85,10 +89,7 @@ object ActivityManager{
         )
     }
 
-    fun startLoginByUidActivity(activity: Activity) {
-        val intent = Intent(activity, LoginByUidActivity::class.java)
-        activity.startActivityForResult(intent, 0)
-    }
+
 
     fun startPlayHistoryActivity(activity: Activity) {
         val intent = Intent(activity, PlayHistoryActivity::class.java)

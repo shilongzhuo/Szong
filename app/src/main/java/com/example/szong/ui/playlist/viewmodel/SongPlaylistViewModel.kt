@@ -4,10 +4,10 @@ import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.szong.api.music.song.favorite.MyFavorite
+import com.example.szong.api.music.song.favorite.local.MyFavoriteAPI
 import com.example.szong.data.music.SearchType
 import com.example.szong.data.music.standard.StandardSongData
-import com.example.szong.manager.music.Api
+import com.example.szong.manager.music.ApiManager
 import com.example.szong.manager.user.NeteaseUser
 import com.example.szong.util.app.runOnMainThread
 import com.example.szong.util.data.toArrayList
@@ -54,7 +54,7 @@ class SongPlaylistViewModel : ViewModel() {
                                 getPlaylist(id, true)
                             }
                             SearchType.ALBUM -> {
-                                Api.getAlbumSongs(id)?.let {
+                                ApiManager.getAlbumSongs(id)?.let {
                                     withContext(Dispatchers.Main) {
                                         songList.value = it.songs.toArrayList()
                                         playlistUrl.value = it.album.picUrl
@@ -64,7 +64,7 @@ class SongPlaylistViewModel : ViewModel() {
                                 }
                             }
                             SearchType.SINGER -> {
-                                Api.getSingerSongs(id)?.let {
+                                ApiManager.getSingerSongs(id)?.let {
                                     withContext(Dispatchers.Main) {
                                         songList.value = it.songs.toArrayList()
                                         playlistUrl.value = it.singer.picUrl
@@ -90,7 +90,7 @@ class SongPlaylistViewModel : ViewModel() {
                 }
             }
             TAG_LOCAL_MY_FAVORITE -> {
-                MyFavorite.read {
+                MyFavoriteAPI.read {
                     setSongList(it)
                 }
             }
@@ -107,7 +107,7 @@ class SongPlaylistViewModel : ViewModel() {
         when (tag.value) {
             TAG_NETEASE, TAG_NETEASE_MY_FAVORITE -> {
                 GlobalScope.launch {
-                    val info = Api.getPlayListInfo(playlistId.value?.toLong() ?: 0L)
+                    val info = ApiManager.getPlayListInfo(playlistId.value?.toLong() ?: 0L)
                     if (info != null) {
                         withContext(Dispatchers.Main) {
                             playlistUrl.value = info.coverImgUrl ?: ""
@@ -137,7 +137,7 @@ class SongPlaylistViewModel : ViewModel() {
 
     private fun getPlaylist(id: Long, useCache: Boolean) {
         viewModelScope.launch {
-            Api.getPlayList(id, useCache).let { packed ->
+            ApiManager.getPlayList(id, useCache).let { packed ->
                 withContext(Dispatchers.Main) {
                     if (packed.songs.isEmpty()) {
                         toast("歌单内容获取失败，尝试更换 NeteaseCloudMusicApi")

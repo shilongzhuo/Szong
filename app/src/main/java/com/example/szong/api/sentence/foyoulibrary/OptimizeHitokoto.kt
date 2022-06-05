@@ -1,6 +1,7 @@
 
-package com.example.szong.api.sentence
+package com.example.szong.api.sentence.foyoulibrary
 import android.util.Log
+import com.example.szong.api.sentence.SentenceData
 import com.example.szong.util.data.isChinese
 
 /**
@@ -147,7 +148,6 @@ object OptimizeHitokoto {
             "qq空间", "QQ空间", "互联网", "微博" -> ""
             "——顾城" -> "顾城"
             "《易经》" -> "易经"
-            "8848太监手机" -> "8848"
             else -> sentenceSourceStr
         }
         return sentenceSourceStr

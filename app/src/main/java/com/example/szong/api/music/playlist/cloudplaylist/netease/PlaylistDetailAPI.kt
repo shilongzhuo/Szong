@@ -4,7 +4,7 @@ import com.example.szong.data.music.standard.SOURCE_NETEASE
 import com.example.szong.data.music.standard.StandardSongData
 
 
-data class PlaylistDetail(
+data class PlaylistDetailAPI(
     var playlist: Playlist?,
     var privileges: ArrayList<Privilege>?
 ) {

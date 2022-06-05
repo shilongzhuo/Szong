@@ -1,10 +1,10 @@
-package com.example.szong.api.music.song.daily
+package com.example.szong.api.music.song.daily.netease
 
-import com.example.szong.api.music.song.daily.netease.DailyRecommendSongData
 import com.example.szong.data.music.standard.SOURCE_NETEASE
 import com.example.szong.data.music.standard.StandardSongData
 
-fun ArrayList<DailyRecommendSongData.DataData.DailySongsData>.toStandardSongDataArrayList(): ArrayList<StandardSongData> {
+fun ArrayList<DailyRecommendSongData.DataData.DailySongsData>.toStandardSongDataArrayList():
+        ArrayList<StandardSongData> {
     val standardSongDataArrayList = ArrayList<StandardSongData>()
     this.forEach {
         val songData = StandardSongData(

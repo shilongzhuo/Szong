@@ -1,4 +1,4 @@
-package com.example.szong.api.music.artist
+package com.example.szong.api.music.artist.netease
 
 import androidx.annotation.Keep
 
@@ -18,7 +18,4 @@ data class ArtistsData(
         val id: Int
     )
 
-//    data class HotSongsData(
-//
-//    )
 }

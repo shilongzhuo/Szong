@@ -1,4 +1,4 @@
-package com.example.szong.api.music.song.favorite
+package com.example.szong.api.music.song.favorite.local
 
 import com.example.szong.App
 import com.example.szong.database.room.MyFavoriteData
@@ -10,7 +10,7 @@ import kotlin.concurrent.thread
 /**
  * 本地我喜欢的
  */
-object MyFavorite {
+object MyFavoriteAPI {
 
     private val myFavoriteDao = App.appDatabase.myFavoriteDao()
 

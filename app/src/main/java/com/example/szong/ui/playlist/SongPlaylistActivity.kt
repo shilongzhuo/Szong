@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import coil.load
 import coil.size.ViewSizeResolver
 import com.example.szong.R
-import com.example.szong.api.music.song.favorite.MyFavorite
+import com.example.szong.api.music.song.favorite.local.MyFavoriteAPI
 import com.example.szong.data.music.SearchType
 import com.example.szong.databinding.ActivityPlaylistBinding
 import com.example.szong.ui.base.BaseActivity
@@ -43,7 +43,7 @@ class SongPlaylistActivity: BaseActivity() {
     val adapter = SongAdapter {
         SongMenuDialog(this, this, it) {
             if (songPlaylistViewModel.tag.value == TAG_LOCAL_MY_FAVORITE) {
-                MyFavorite.deleteById(it.id ?: "")
+                MyFavoriteAPI.deleteById(it.id ?: "")
                 songPlaylistViewModel.update()
                 toast("删除成功")
             } else {

@@ -7,7 +7,7 @@ import android.util.Log
 import androidx.annotation.Keep
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.szong.manager.music.Api
+import com.example.szong.manager.music.ApiManager
 import com.example.szong.manager.user.NeteaseUser
 import com.example.szong.widget.toast
 import kotlinx.coroutines.*
@@ -37,9 +37,9 @@ class LoginQRCodeViewModel : ViewModel() {
     }
 
     private suspend fun getQRCode():Bitmap? {
-        Api.getLoginKey()?.data?.unikey?.let { key ->
+        ApiManager.getLoginKey()?.data?.unikey?.let { key ->
             this.key = key
-            Api.getLoginQRCode(key)?.data?.qrimg?.let { imageStr ->
+            ApiManager.getLoginQRCode(key)?.data?.qrimg?.let { imageStr ->
                 if (imageStr.isNotEmpty()) {
                     try {
                         val start = "data:image/png;base64,"
@@ -66,13 +66,13 @@ class LoginQRCodeViewModel : ViewModel() {
     suspend fun checkLoginStatus() {
         var statusCode = 0
         do {
-            Api.checkLoginResult(key)?.apply {
+            ApiManager.checkLoginResult(key)?.apply {
                 Log.d(TAG, "login status code $code")
                 statusCode = code
                 if (code == 803) {
                     Log.i(TAG, "do login success, cookies is $cookie")
                     cookie?.let {
-                        Api.getUserInfo(it)?.apply {
+                        ApiManager.getUserInfo(it)?.apply {
                             Log.i(TAG, "login success, $this")
                             account?.id?.let { uid ->
                                 NeteaseUser.cookie = cookie

@@ -1,6 +1,6 @@
 package com.example.szong.data.music
 
-import com.example.szong.api.music.lyric.local.LyricParse
+import com.example.szong.api.music.lyric.local.LocalLyricAPI
 import com.example.szong.data.music.standard.SOURCE_NETEASE
 import com.example.szong.data.music.standard.SOURCE_QQ
 import com.example.szong.data.music.standard.StandardSongData
@@ -19,7 +19,7 @@ object SearchLyric {
                 url = "https://c.y.qq.com/lyric/fcgi-bin/fcg_query_lyric_new.fcg?songmid=${songData.id}&format=json&nobase64=1"
             }
             else -> {
-                LyricParse.getLyric(songData.name?:"") {
+                LocalLyricAPI.getLyricWithQq(songData.name?:"") {
                     success.invoke(it)
                 }
             }

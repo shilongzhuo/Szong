@@ -5,7 +5,7 @@ import android.view.View
 import androidx.activity.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.szong.R
-import com.example.szong.api.music.song.daily.toStandardSongDataArrayList
+import com.example.szong.api.music.song.daily.netease.toStandardSongDataArrayList
 import com.example.szong.databinding.ActivityRecommendBinding
 import com.example.szong.manager.music.playMusic
 import com.example.szong.ui.base.BaseActivity

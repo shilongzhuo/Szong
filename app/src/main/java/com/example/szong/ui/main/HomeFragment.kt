@@ -7,16 +7,15 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.szong.databinding.FragmentHomeBinding
 import com.example.szong.databinding.IncludeFoyouBinding
 
-import com.example.szong.api.music.playlist.recommend.netease.PlaylistRecommend
-import com.example.szong.api.music.song.newsong.netease.NewSong
+import com.example.szong.api.music.playlist.recommend.netease.RecommendAPI
+import com.example.szong.api.music.song.newsong.netease.NewSongAPI
 import com.example.szong.ui.base.BaseFragment
 import com.example.szong.ui.main.adapter.NewSongAdapter
 import com.example.szong.ui.main.adapter.PlaylistRecommendAdapter
-import com.example.szong.api.sentence.Sentence
+import com.example.szong.api.sentence.SentenceAPI
 import com.example.szong.manager.user.NeteaseUser
 import com.example.szong.ui.main.viewmodel.MainViewModel
 import com.example.szong.ui.recommend.RecommendActivity
@@ -104,7 +103,7 @@ class HomeFragment : BaseFragment(){
         binding.includeFoyou.tvAuthor.alpha = 0f
         binding.includeFoyou.tvSource.alpha = 0f
 
-        Sentence.getSentence {
+        SentenceAPI.getSentence {
             runOnMainThread {
                 binding.includeFoyou.tvText.text = it.text
                 binding.includeFoyou.tvAuthor.text = it.author
@@ -117,7 +116,7 @@ class HomeFragment : BaseFragment(){
     }
 
     private fun refreshPlaylistRecommend() {
-        PlaylistRecommend.getPlaylistRecommend(requireContext(), {
+        RecommendAPI.getPlaylistRecommend(requireContext(), {
             runOnMainThread {
                 binding.rvPlaylistRecommend.layoutManager = GridLayoutManager(context, 2, GridLayoutManager.HORIZONTAL, false)
                // binding.rvPlaylistRecommend.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
@@ -129,7 +128,7 @@ class HomeFragment : BaseFragment(){
 
     private fun updateNewSong() {
         this.context?.let {
-            NewSong.getNewSong(it) {
+            NewSongAPI.getNewSong(it) {
                 runOnMainThread {
                     binding.rvNewSong.layoutManager = GridLayoutManager(this.context, 2)
                     binding.rvNewSong.adapter = NewSongAdapter(it)

@@ -1,12 +1,12 @@
 package com.example.szong.api.sentence
 import androidx.annotation.Keep
 import com.example.szong.App
-import com.example.szong.api.sentence.foyoulibrary.FoyouLibrary
+import com.example.szong.api.sentence.foyoulibrary.*
 import com.example.szong.util.net.status.InternetState
 import com.example.szong.util.net.MagicHttp
 import com.google.gson.Gson
 
-object Sentence {
+object SentenceAPI {
     /**
      * 获取句子
      */
@@ -29,7 +29,14 @@ object Sentence {
      * 获取 Foyou 库句子
      */
     private fun getFoyouLibrarySentence(): SentenceData {
-        return FoyouLibrary.getSentence()
+        val sentence = when ((1..3).random()) {
+            1 -> FoyouPoetry.getFoyouPoetry()
+            2 -> FoyouLiterature.getLiterature()
+            3 -> FoyouOthers.getFoyouOthers()
+            else -> FoyouPoetry.getFoyouPoetry()
+        }
+        val text = OptimizeHitokoto.sentenceTextNewLine(sentence.text)
+        return SentenceData(text, sentence.author, sentence.source)
     }
 
     /**
