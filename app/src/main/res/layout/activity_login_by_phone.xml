@@ -116,7 +116,7 @@
                 android:layout_marginEnd="16dp"
                 android:layout_marginTop="16dp"
                 android:lineSpacingExtra="@dimen/lineSpacingExtra"
-                android:text="使用网易云手机号登录需知：\n确保使用正版 Dso Music 。\n密码将在本地进行加密后请求服务器，Dso Music 本地以及服务器都不会存储你的密码。\n若对安全性不信任可以使用 100% 安全的 UID 登录。"
+                android:text="使用网易云手机号登录需知：\n密码将在本地进行加密后请求服务器，本地以及服务器都不会存储你的密码。\n若对安全性不信任可以使用 100% 安全的 UID 登录。"
                 android:textColor="@color/colorSubTextForeground"
                 android:textSize="12sp" />
 
@@ -132,7 +132,7 @@
                 android:layout_marginEnd="16dp"
                 android:layout_marginTop="16dp"
                 android:lineSpacingExtra="@dimen/lineSpacingExtra"
-                android:text="Dso Music 现不提供自带手机号登录，请先配置网易云 API 再使用手机号登录"
+                android:text="现不提供自带手机号登录，请先配置网易云 API 再使用手机号登录"
                 android:textColor="@color/colorSubTextForeground"
                 android:textSize="12sp" />
 

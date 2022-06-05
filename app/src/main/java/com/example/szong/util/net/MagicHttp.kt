@@ -117,7 +117,7 @@ object MagicHttp {
 
                 client.newCall(request).enqueue(object : Callback {
                     override fun onResponse(call: Call, response: Response) {
-                        Log.e(TAG, "onResponse: newGet()", )
+                        Log.e(TAG, "onResponse: ${response.toString()}", )
                         val string = response.body()?.string()?:""
                         // val string = response.body?.string()!!
                         success.invoke(string)
