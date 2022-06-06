@@ -18,13 +18,23 @@
         <entry key="..\:/AndridProject/Szong1/app/src/main/res/drawable/background_seek_bar_music.xml" value="0.164" />
         <entry key="..\:/AndridProject/Szong1/app/src/main/res/drawable/bg_card.xml" value="0.1615" />
         <entry key="..\:/AndridProject/Szong1/app/src/main/res/drawable/ic_baseline_keyboard_tab_24.xml" value="0.1615" />
+        <entry key="..\:/AndridProject/Szong1/app/src/main/res/drawable/ic_cloud_music.xml" value="0.111" />
         <entry key="..\:/AndridProject/Szong1/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1615" />
         <entry key="..\:/AndridProject/Szong1/app/src/main/res/drawable/ic_round_pause_24.xml" value="0.1265" />
         <entry key="..\:/AndridProject/Szong1/app/src/main/res/drawable/ic_round_play_arrow_24.xml" value="0.103" />
         <entry key="..\:/AndridProject/Szong1/app/src/main/res/drawable/ic_round_skip_next_24.xml" value="0.103" />
+        <entry key="..\:/AndridProject/Szong1/app/src/main/res/layout-land/activity_player.xml" value="0.2" />
         <entry key="..\:/AndridProject/Szong1/app/src/main/res/layout/activity_main.xml" value="0.115625" />
         <entry key="..\:/AndridProject/Szong1/app/src/main/res/layout/activity_play.xml" value="0.115625" />
+        <entry key="..\:/AndridProject/Szong1/app/src/main/res/layout/activity_top_list.xml" value="0.10729166666666666" />
         <entry key="..\:/AndridProject/Szong1/app/src/main/res/layout/fragment_second.xml" value="0.115625" />
+        <entry key="..\:/AndridProject/Szong1/app/src/main/res/layout/layout_comment.xml" value="0.10104166666666667" />
+        <entry key="..\:/AndridProject/Szong1/app/src/main/res/layout/recycler_fragment_my_icon.xml" value="0.2" />
+        <entry key="..\:/AndridProject/Szong1/app/src/main/res/layout/recycler_fragment_my_user.xml" value="0.10104166666666667" />
+        <entry key="..\:/AndridProject/Szong1/app/src/main/res/layout/recycler_my_playlist.xml" value="0.10104166666666667" />
+        <entry key="..\:/AndridProject/Szong1/app/src/main/res/layout/recycler_search.xml" value="0.10104166666666667" />
+        <entry key="..\:/AndridProject/Szong1/app/src/main/res/layout/recycler_song.xml" value="0.10104166666666667" />
+        <entry key="..\:/AndridProject/Szong1/app/src/main/res/layout/recycler_top_list.xml" value="0.10104166666666667" />
         <entry key="..\:/AndridProject/Szong1/app/src/main/res/layout/thrid.xml" value="0.115625" />
         <entry key="..\:/AndridProject/Szong1/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.103" />
       </map>
