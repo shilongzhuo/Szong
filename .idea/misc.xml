@@ -13,10 +13,20 @@
         <entry key="..\:/AndridProject/Szong/app/src/main/res/layout/fragment_second.xml" value="0.10400000000000001" />
         <entry key="..\:/AndridProject/Szong/app/src/main/res/layout/thrid.xml" value="0.264" />
         <entry key="..\:/AndridProject/Szong/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
+        <entry key="..\:/AndridProject/Szong1/app/src/main/res/drawable/background_button_radius_red.xml" value="0.164" />
+        <entry key="..\:/AndridProject/Szong1/app/src/main/res/drawable/background_item_default.xml" value="0.164" />
+        <entry key="..\:/AndridProject/Szong1/app/src/main/res/drawable/background_seek_bar_music.xml" value="0.164" />
+        <entry key="..\:/AndridProject/Szong1/app/src/main/res/drawable/bg_card.xml" value="0.1615" />
+        <entry key="..\:/AndridProject/Szong1/app/src/main/res/drawable/ic_baseline_keyboard_tab_24.xml" value="0.1615" />
+        <entry key="..\:/AndridProject/Szong1/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1615" />
+        <entry key="..\:/AndridProject/Szong1/app/src/main/res/drawable/ic_round_pause_24.xml" value="0.1265" />
+        <entry key="..\:/AndridProject/Szong1/app/src/main/res/drawable/ic_round_play_arrow_24.xml" value="0.103" />
+        <entry key="..\:/AndridProject/Szong1/app/src/main/res/drawable/ic_round_skip_next_24.xml" value="0.103" />
         <entry key="..\:/AndridProject/Szong1/app/src/main/res/layout/activity_main.xml" value="0.115625" />
         <entry key="..\:/AndridProject/Szong1/app/src/main/res/layout/activity_play.xml" value="0.115625" />
         <entry key="..\:/AndridProject/Szong1/app/src/main/res/layout/fragment_second.xml" value="0.115625" />
         <entry key="..\:/AndridProject/Szong1/app/src/main/res/layout/thrid.xml" value="0.115625" />
+        <entry key="..\:/AndridProject/Szong1/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.103" />
       </map>
     </option>
   </component>
