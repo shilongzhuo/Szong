@@ -133,9 +133,9 @@ class SearchActivity : BaseActivity() {
 //                toast("酷我音源暂只支持精确搜索，需要填入完整歌曲名")
             }
 
-            itemOpenSource.setOnClickListener {
-                openUrlByBrowser(this@SearchActivity, "https://github.com/Moriafly/DsoMusic")
-            }
+//            itemOpenSource.setOnClickListener {
+//                openUrlByBrowser(this@SearchActivity, "https://github.com/Moriafly/DsoMusic")
+//            }
 
             searchTypeView.setMainFabClosedDrawable(resources.getDrawable(SearchType.getIconRes(searchType)))
 

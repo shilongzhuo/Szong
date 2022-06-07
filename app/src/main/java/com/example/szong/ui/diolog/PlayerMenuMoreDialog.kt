@@ -3,6 +3,7 @@ package com.example.szong.ui.diolog
 import android.content.Context
 import android.content.Intent
 import com.example.szong.App
+import com.example.szong.api.music.song.favorite.local.MyFavoriteAPI
 import com.example.szong.data.music.standard.SOURCE_NETEASE
 import com.example.szong.data.music.standard.SOURCE_QQ
 import com.example.szong.data.music.standard.StandardSongData
@@ -35,28 +36,32 @@ class PlayerMenuMoreDialog(context: Context) : BaseBottomSheetDialog(context) {
     override fun initListener() {
         binding.apply {
             // 添加到网易云我喜欢
-            itemAddNeteaseFavorite.setOnClickListener {
-                if (NeteaseUser.cookie.isEmpty()) {
-                    toast("离线模式无法收藏到在线我喜欢~")
-                } else {
-                    song?.let {
-                        when (it.source) {
-                            SOURCE_NETEASE -> {
-                                App.cloudMusicManager.likeSong(it.id?:"", {
-                                    toast("添加到我喜欢成功")
-                                    dismiss()
-                                }, {
-                                    toast("添加到我喜欢失败")
-                                    dismiss()
-                                })
-                            }
-                            SOURCE_QQ -> {
-                                toast("暂不支持此音源")
-                                dismiss()
-                            }
-                        }
-                    }
-                }
+//            itemAddNeteaseFavorite.setOnClickListener {
+//                if (NeteaseUser.cookie.isEmpty()) {
+//                    toast("离线模式无法收藏到在线我喜欢~")
+//                } else {
+//                    song?.let {
+//                        when (it.source) {
+//                            SOURCE_NETEASE -> {
+//                                App.cloudMusicManager.likeSong(it.id?:"", {
+//                                    toast("添加到我喜欢成功")
+//                                    dismiss()
+//                                }, {
+//                                    toast("添加到我喜欢失败")
+//                                    dismiss()
+//                                })
+//                            }
+//                            SOURCE_QQ -> {
+//                                toast("暂不支持此音源")
+//                                dismiss()
+//                            }
+//                        }
+//                    }
+//                }
+//            }
+            //添加到本地歌单
+            itemAddLocalMyPlaylist.setOnClickListener{
+
             }
             // 歌曲信息
             itemSongInfo.setOnClickListener {

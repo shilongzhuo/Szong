@@ -44,26 +44,31 @@ constructor(
                 MyFavoriteAPI.addSong(songData)
                 dismiss()
             }
-            // 添加到网易云我喜欢
-            itemAddNeteaseFavorite.setOnClickListener {
-                if (NeteaseUser.cookie.isEmpty()) {
-                    toast("离线模式无法收藏到在线我喜欢~")
-                } else {
-                    when (songData.source) {
-                        SOURCE_NETEASE -> {
-                            App.cloudMusicManager.likeSong(songData.id?:"", {
-                                toast("添加到我喜欢成功")
-                            }, {
-                                toast("添加到我喜欢失败")
-                            })
-                        }
-                        else -> {
-                            toast("暂不支持此音源")
-                            dismiss()
-                        }
-                    }
-                }
+            //添加到本地歌单
+            itemAddLocalMyPlaylist.setOnClickListener{
+
             }
+            // 添加到网易云我喜欢
+//            itemAddNeteaseFavorite.setOnClickListener {
+//                if (NeteaseUser.cookie.isEmpty()) {
+//                    toast("离线模式无法收藏到在线我喜欢~")
+//                } else {
+//                    when (songData.source) {
+//                        SOURCE_NETEASE -> {
+//                            App.cloudMusicManager.likeSong(songData.id?:"", {
+//                                toast("添加到我喜欢成功")
+//                            }, {
+//                                toast("添加到我喜欢失败")
+//                            })
+//                        }
+//                        else -> {
+//                            toast("暂不支持此音源")
+//                            dismiss()
+//                        }
+//                    }
+//                }
+//            }
+
             // 歌曲信息
             itemSongInfo.setOnClickListener {
                 // toast("歌曲信息 ${ songData.id }")
