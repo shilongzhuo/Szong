@@ -54,7 +54,7 @@
         <activity android:name=".ui.cloudapi.NeteaseCloudMusicApiActivity" />
         <activity
 
-            android:name=".ui.playlist.SongSearchActivity"
+            android:name=".ui.localmusic.SongSearchActivity"
             android:windowSoftInputMode="adjustPan" />
 
         <activity

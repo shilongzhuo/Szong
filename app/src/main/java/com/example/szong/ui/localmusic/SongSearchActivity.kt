@@ -1,4 +1,4 @@
-package com.example.szong.ui.playlist
+package com.example.szong.ui.localmusic
 
 import android.text.Editable
 import android.text.TextWatcher
@@ -12,6 +12,9 @@ import com.example.szong.ui.playlist.adapter.SongAdapter
 import com.example.szong.widget.toast
 import java.util.*
 
+/**
+ * 本地搜索
+ */
 class SongSearchActivity : BaseActivity() {
 
     private lateinit var binding: ActivitySongSearchBinding

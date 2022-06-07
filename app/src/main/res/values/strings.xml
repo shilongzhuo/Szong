@@ -67,7 +67,8 @@
     <string name="remove_the_song">移除这首歌曲</string>
     <string name="add_to_netease_favorite">添加到在线网易云我喜欢</string>
     <string name="add_to_local_my_favorite">添加到本地我的收藏</string>
-    <string name="add_to_local_my_playlist">添加到本地我的歌单</string>
+    <string name="add_to_local_my_playlist">添加到本地歌单</string>
+    <string name="create_local_my_playlist">创建本地歌单</string>
     <string name="recommend_new_songs">新歌速递</string>
     <string name="email">邮箱</string>
     <string name="personal_fm">私人 FM</string>

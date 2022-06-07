@@ -1,4 +1,4 @@
-package com.example.szong.api.music.playlist.locallist.local
+package com.example.szong.api.music.playlist.localplaylist.local
 
 import com.example.szong.App
 import com.example.szong.data.music.standard.StandardPlaylistData
@@ -8,14 +8,16 @@ object LocalPlaylistAPI {
 
     private const val ARRAY_LOCAL_PLAYLIST = "array_local_playlist"
 
+    // https://cj.jj20.com/2020/down.html?picurl=/up/allimg/1112/022G9140411/1Z22G40411-6.jpg
     /**
      * 读取本地歌单集合
      * @return 本地歌单集合返回
      */
-    private fun read(): LocalPlaylistArrayData {
-        val defaultData = LocalPlaylistArrayData(ArrayList())
+    fun read(): LocalPlaylistArray {
+        val defaultData = LocalPlaylistArray(ArrayList<StandardPlaylistData>())
         // MMKV 读取
-        return App.mmkv.decodeParcelable(ARRAY_LOCAL_PLAYLIST, LocalPlaylistArrayData::class.java, defaultData)
+        return App.mmkv.decodeParcelable(ARRAY_LOCAL_PLAYLIST
+            , LocalPlaylistArray::class.java, defaultData)
     }
 
     /**
@@ -29,17 +31,19 @@ object LocalPlaylistAPI {
         val standardPlaylistData = StandardPlaylistData(name, description, imageUrl, emptyArrayList)
         // 读取本地集合
         val localData = read()
-        localData.data.add(standardPlaylistData)
+        localData.lists.add(standardPlaylistData)
         // 保存
         save(localData)
     }
 
     /**
      * 保存本地歌单数据
-     * 传入旧数据 [oldData]
+     * 传入旧数据 [data]
      */
-    fun save(oldData: LocalPlaylistArrayData) {
-        App.mmkv.encode(ARRAY_LOCAL_PLAYLIST, oldData)
+    fun save(data:LocalPlaylistArray) {
+        App.mmkv.encode(ARRAY_LOCAL_PLAYLIST, data)
     }
+
+
 
 }
