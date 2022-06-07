@@ -27,10 +27,7 @@ class MyFragmentIconAdapter(val context: Context): RecyclerView.Adapter<MyFragme
         val clLocal: ConstraintLayout = view.findViewById(R.id.clLocal)
         val clUserCloud: ConstraintLayout = view.findViewById(R.id.clUserCloud)
         val clFavorite: ConstraintLayout = view.findViewById(R.id.clFavorite)
-<<<<<<< HEAD
         val clPersonalFM: ConstraintLayout = view.findViewById(R.id.clPersonalFM)
-=======
->>>>>>> e2d16e4d41084973f8d213438ea7a3a6851d9085
         val clLatest: ConstraintLayout = view.findViewById(R.id.clLatest)
 
     }
@@ -64,7 +61,7 @@ class MyFragmentIconAdapter(val context: Context): RecyclerView.Adapter<MyFragme
                 val intent = Intent(context, PlayHistoryActivity::class.java)
                 context.startActivity(intent)
             }
-<<<<<<< HEAD
+
             clPersonalFM.setOnClickListener {
                 AnimationUtil.click(it)
                 if (NeteaseUser.hasCookie) {
@@ -78,9 +75,7 @@ class MyFragmentIconAdapter(val context: Context): RecyclerView.Adapter<MyFragme
                    toast(ErrorCode.getMessage(ErrorCode.ERROR_NOT_COOKIE))
                 }
             }
-=======
 
->>>>>>> e2d16e4d41084973f8d213438ea7a3a6851d9085
             // 用户云盘
             clUserCloud.setOnClickListener {
                 AnimationUtil.click(it)
