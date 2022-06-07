@@ -47,6 +47,7 @@ android {
     composeOptions {
         kotlinCompilerExtensionVersion = compose_version
         kotlinCompilerVersion = kotlin_version
+
     }
     packagingOptions {
         exclude 'lib/*/libRSSupport.so'
@@ -54,6 +55,9 @@ android {
     }
 
 }
+
+
+
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])

@@ -30,10 +30,15 @@
             app:text="@string/add_to_local_my_favorite" />
 
         <com.example.szong.widget.ItemLayout
-            android:id="@+id/itemAddNeteaseFavorite"
+            android:id="@+id/itemAddLocalMyPlaylist"
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            app:text="@string/add_to_netease_favorite" />
+            app:text="@string/add_to_local_my_playlist" />
+<!--        <com.example.szong.widget.ItemLayout-->
+<!--            android:id="@+id/itemAddNeteaseFavorite"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="48dp"-->
+<!--            app:text="@string/add_to_netease_favorite" />-->
 
         <com.example.szong.widget.ItemLayout
             android:id="@+id/itemSongComment"

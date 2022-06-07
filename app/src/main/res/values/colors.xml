@@ -9,7 +9,8 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="colorPrimary">#969696</color>
-    <color name="colorPrimaryDark">#3700B3</color>
+
+    <color name="colorPrimaryDark">#A8A1B8</color>
     <color name="colorAccent">#03DAC5</color>
 
     <bool name="dso_bool_status_bar_foreground">true</bool>

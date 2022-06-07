@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.activity.TopListActivity">
+
+    tools:context=".ui.toplist.TopListActivity">
 
     <com.example.szong.widget.TitleBarLayout
         android:id="@+id/titleBarLayout"

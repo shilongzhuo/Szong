@@ -15,6 +15,7 @@ import com.example.szong.api.music.playlist.cloudplaylist.netease.compatSearchDa
 import com.example.szong.api.music.song.search.netease.ArtistInfoResult
 import com.example.szong.api.music.song.search.netease.ArtistsSongs
 import com.example.szong.api.music.song.search.netease.NeteaseSearchResult
+import com.example.szong.api.music.song.search.netease.Result
 import com.example.szong.api.music.song.search.qq.QqSearchSongAPI
 import com.example.szong.api.user.auth.netease.NeteaseGetKey
 import com.example.szong.api.user.auth.netease.NeteaseLoginResult
@@ -117,6 +118,7 @@ object ApiManager {
         return AlbumAPI.getAlbumSongs(id)
     }
 
+
     suspend fun getSingerSongs(id: Long): StandardSingerPackageData? {
         val songs = ArrayList<StandardSongData>()
         var result: ArtistsSongs?
@@ -129,8 +131,10 @@ object ApiManager {
             }
         } while (result?.more == true && result.songs.isNotEmpty())
 
-        HttpUtils.get("${getDefaultApi()}/artist/detail?id=$id", ArtistInfoResult::class.java, true)?.data?.artist?.let {
+        HttpUtils.get("${getDefaultApi()}/artist/detail?id=$id", ArtistInfoResult::class.java
+            , true)?.data?.artist?.let {
             return StandardSingerPackageData(it.switchToStandardSinger(), songs)
+
         }
         return null
     }

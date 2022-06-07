@@ -61,7 +61,7 @@
             android:layout_height="42dp"
             android:layout_marginTop="16dp"
             android:padding="5dp"
-            android:src="@drawable/ic_user_cloud"
+            android:src="@drawable/ic_cloud_music"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -93,7 +93,8 @@
             android:layout_height="42dp"
             android:layout_marginTop="16dp"
             android:padding="6dp"
-            android:src="@drawable/local_page_follow_mark"
+            android:src="@drawable/ic_love_music"
+
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
@@ -117,6 +118,7 @@
             tools:ignore="ContentDescription" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -164,7 +166,8 @@
             android:layout_height="42dp"
             android:layout_marginTop="16dp"
             android:padding="6dp"
-            android:src="@drawable/local_page_latest_mark"
+            android:src="@drawable/ic_recent_music"
+
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -182,6 +185,4 @@
             tools:ignore="ContentDescription" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 </LinearLayout>

@@ -63,8 +63,10 @@ data class Result(
         return list
     }
 
+
     fun switchToStandardSingers(): List<StandardSingerData> {
         val list = ArrayList<StandardSingerData>()
+
         if (artists != null) {
             for (singer in artists) {
                 list.add(singer.switchToStandard())
@@ -144,9 +146,9 @@ data class Ar(
     fun switchToStandard(): StandardSongData.StandardArtistData{
         return StandardSongData.StandardArtistData(id, name)
     }
-
     fun switchToStandardSinger(): StandardSingerData {
         return StandardSingerData(id,name,cover?:"",briefDesc?:"")
+
     }
 }
 
