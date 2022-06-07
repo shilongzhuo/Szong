@@ -34,7 +34,10 @@ class LocalMusicActivity : BaseActivity() {
             fun scanLocalMusic(context: Context) {
                 LocalMusicAPI.scanLocalMusic(context, {
                     runOnMainThread {
+<<<<<<< HEAD
+=======
                         songList.value = it
+>>>>>>> e2d16e4d41084973f8d213438ea7a3a6851d9085
                         /**
                         binding.titleBar.setTitleBarText("本地音乐(${it.size})")
                         songList.value = it

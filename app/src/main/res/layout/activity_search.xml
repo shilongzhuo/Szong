@@ -165,6 +165,7 @@
 <!--                        app:layout_constraintTop_toTopOf="parent" />-->
 <!--                </com.example.szong.widget.ItemLayout>-->
 
+
                 <TextView
                     android:id="@+id/tvSearchHot"
                     android:layout_width="match_parent"

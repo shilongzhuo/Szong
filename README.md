@@ -125,3 +125,9 @@
 数据库：sqlite
 
 ## 部署说明
+
+
+
+## 第三方API
+网易云 ：http://music.eleuu.com/
+

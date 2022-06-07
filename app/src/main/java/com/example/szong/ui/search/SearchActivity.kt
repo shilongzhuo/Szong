@@ -35,7 +35,11 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import androidx.recyclerview.widget.*
 import com.example.szong.data.music.standard.StandardPlaylist
+<<<<<<< HEAD
+import com.example.szong.data.music.standard.StandardSingerData
+=======
 import com.example.szong.data.music.standard.StandardSinger
+>>>>>>> e2d16e4d41084973f8d213438ea7a3a6851d9085
 import com.example.szong.data.music.standard.StandardSongData
 import com.example.szong.ui.diolog.SongMenuDialog
 import com.example.szong.ui.playlist.adapter.SongAdapter
@@ -133,9 +137,15 @@ class SearchActivity : BaseActivity() {
 //                toast("酷我音源暂只支持精确搜索，需要填入完整歌曲名")
             }
 
+<<<<<<< HEAD
+            itemOpenSource.setOnClickListener {
+                openUrlByBrowser(this@SearchActivity, "https://github.com/Moriafly/DsoMusic")
+            }
+=======
 //            itemOpenSource.setOnClickListener {
 //                openUrlByBrowser(this@SearchActivity, "https://github.com/Moriafly/DsoMusic")
 //            }
+>>>>>>> e2d16e4d41084973f8d213438ea7a3a6851d9085
 
             searchTypeView.setMainFabClosedDrawable(resources.getDrawable(SearchType.getIconRes(searchType)))
 
@@ -257,7 +267,11 @@ class SearchActivity : BaseActivity() {
         }
     }
 
+<<<<<<< HEAD
+    private fun initSingers(singers: List<StandardSingerData>) {
+=======
     private fun initSingers(singers: List<StandardSinger>) {
+>>>>>>> e2d16e4d41084973f8d213438ea7a3a6851d9085
         binding.rvPlaylist.layoutManager = LinearLayoutManager(this)
         binding.rvPlaylist.adapter = SingerAdapter {
             val intent = Intent(this@SearchActivity, SongPlaylistActivity::class.java)

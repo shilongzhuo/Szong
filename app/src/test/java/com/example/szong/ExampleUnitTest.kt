@@ -1,5 +1,7 @@
 package com.example.szong
 
+import com.example.szong.util.data.md5
+import com.example.szong.util.security.SkySecure.appMd5
 import org.junit.Test
 
 import org.junit.Assert.*
@@ -11,7 +13,7 @@ import org.junit.Assert.*
  */
 class ExampleUnitTest {
     @Test
-    fun addition_isCorrect() {
-        assertEquals(4, 2 + 2)
+    fun appMd5Equ(args:Array<String>){
+        assertEquals(appMd5,"Szong".md5())
     }
 }
