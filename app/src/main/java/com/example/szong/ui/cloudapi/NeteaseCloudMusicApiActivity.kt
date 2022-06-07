@@ -34,9 +34,9 @@ class NeteaseCloudMusicApiActivity : BaseActivity() {
             switcherEnableService.setOnCheckedChangeListener {
                 App.mmkv.encode(AppConfig.USER_NETEASE_CLOUD_MUSIC_API_ENABLE, it)
             }
-            itemNeteaseCloudMusicApiGithub.setOnClickListener {
-                openUrlByBrowser(this@NeteaseCloudMusicApiActivity, URL_NETEASE_CLOUD_MUSIC_API)
-            }
+//            itemNeteaseCloudMusicApiGithub.setOnClickListener {
+//                openUrlByBrowser(this@NeteaseCloudMusicApiActivity, URL_NETEASE_CLOUD_MUSIC_API)
+//            }
         }
     }
 

@@ -26,13 +26,17 @@
         <entry key="..\:/AndridProject/Szong1/app/src/main/res/drawable/ic_round_skip_next_24.xml" value="0.103" />
         <entry key="..\:/AndridProject/Szong1/app/src/main/res/drawable/text_cursor_drawable.xml" value="0.1345" />
         <entry key="..\:/AndridProject/Szong1/app/src/main/res/layout-land/activity_player.xml" value="0.2" />
+        <entry key="..\:/AndridProject/Szong1/app/src/main/res/layout-land/activity_splash.xml" value="0.1" />
         <entry key="..\:/AndridProject/Szong1/app/src/main/res/layout/activity_artist.xml" value="0.12395833333333334" />
         <entry key="..\:/AndridProject/Szong1/app/src/main/res/layout/activity_comment.xml" value="0.12395833333333334" />
         <entry key="..\:/AndridProject/Szong1/app/src/main/res/layout/activity_local_music.xml" value="0.264" />
-        <entry key="..\:/AndridProject/Szong1/app/src/main/res/layout/activity_login3.xml" value="0.12395833333333334" />
+        <entry key="..\:/AndridProject/Szong1/app/src/main/res/layout/activity_login3.xml" value="0.176" />
+        <entry key="..\:/AndridProject/Szong1/app/src/main/res/layout/activity_login_by_phone.xml" value="0.16614583333333333" />
+        <entry key="..\:/AndridProject/Szong1/app/src/main/res/layout/activity_login_by_qrcode.xml" value="0.16614583333333333" />
+        <entry key="..\:/AndridProject/Szong1/app/src/main/res/layout/activity_login_by_uid.xml" value="0.16614583333333333" />
         <entry key="..\:/AndridProject/Szong1/app/src/main/res/layout/activity_main.xml" value="0.128" />
         <entry key="..\:/AndridProject/Szong1/app/src/main/res/layout/activity_netease_cloud_music_api.xml" value="0.264" />
-        <entry key="..\:/AndridProject/Szong1/app/src/main/res/layout/activity_play.xml" value="0.115625" />
+        <entry key="..\:/AndridProject/Szong1/app/src/main/res/layout/activity_play.xml" value="0.2" />
         <entry key="..\:/AndridProject/Szong1/app/src/main/res/layout/activity_play_history.xml" value="0.2" />
         <entry key="..\:/AndridProject/Szong1/app/src/main/res/layout/activity_player.xml" value="0.176" />
         <entry key="..\:/AndridProject/Szong1/app/src/main/res/layout/activity_playlist.xml" value="0.12395833333333334" />
@@ -42,16 +46,19 @@
         <entry key="..\:/AndridProject/Szong1/app/src/main/res/layout/activity_search.xml" value="0.264" />
         <entry key="..\:/AndridProject/Szong1/app/src/main/res/layout/activity_settings.xml" value="0.12395833333333334" />
         <entry key="..\:/AndridProject/Szong1/app/src/main/res/layout/activity_song_cover.xml" value="0.12395833333333334" />
-        <entry key="..\:/AndridProject/Szong1/app/src/main/res/layout/activity_song_search.xml" value="0.12395833333333334" />
-        <entry key="..\:/AndridProject/Szong1/app/src/main/res/layout/activity_splash.xml" value="0.12395833333333334" />
+        <entry key="..\:/AndridProject/Szong1/app/src/main/res/layout/activity_song_search.xml" value="0.176" />
+        <entry key="..\:/AndridProject/Szong1/app/src/main/res/layout/activity_splash.xml" value="0.264" />
+        <entry key="..\:/AndridProject/Szong1/app/src/main/res/layout/activity_splash_screen.xml" value="0.1" />
         <entry key="..\:/AndridProject/Szong1/app/src/main/res/layout/activity_top_list.xml" value="0.10729166666666666" />
         <entry key="..\:/AndridProject/Szong1/app/src/main/res/layout/activity_user.xml" value="0.12395833333333334" />
-        <entry key="..\:/AndridProject/Szong1/app/src/main/res/layout/activity_user_cloud.xml" value="0.12395833333333334" />
+        <entry key="..\:/AndridProject/Szong1/app/src/main/res/layout/activity_user_cloud.xml" value="0.2" />
         <entry key="..\:/AndridProject/Szong1/app/src/main/res/layout/dialog_create_local_playlist.xml" value="0.264" />
         <entry key="..\:/AndridProject/Szong1/app/src/main/res/layout/dialog_play_list.xml" value="0.2" />
         <entry key="..\:/AndridProject/Szong1/app/src/main/res/layout/dialog_play_more.xml" value="0.176" />
         <entry key="..\:/AndridProject/Szong1/app/src/main/res/layout/dialog_song_info.xml" value="0.176" />
         <entry key="..\:/AndridProject/Szong1/app/src/main/res/layout/dialog_song_menu.xml" value="0.264" />
+        <entry key="..\:/AndridProject/Szong1/app/src/main/res/layout/dialog_sound_effect.xml" value="0.16614583333333333" />
+        <entry key="..\:/AndridProject/Szong1/app/src/main/res/layout/dialog_text_info.xml" value="0.16614583333333333" />
         <entry key="..\:/AndridProject/Szong1/app/src/main/res/layout/dialog_timing_off.xml" value="0.264" />
         <entry key="..\:/AndridProject/Szong1/app/src/main/res/layout/dialog_update.xml" value="0.4" />
         <entry key="..\:/AndridProject/Szong1/app/src/main/res/layout/fragment_home.xml" value="0.12395833333333334" />
@@ -67,6 +74,7 @@
         <entry key="..\:/AndridProject/Szong1/app/src/main/res/layout/player_cover_image_view.xml" value="0.12395833333333334" />
         <entry key="..\:/AndridProject/Szong1/app/src/main/res/layout/recycle_item_private_letter.xml" value="0.12395833333333334" />
         <entry key="..\:/AndridProject/Szong1/app/src/main/res/layout/recycle_item_search_hot.xml" value="0.12395833333333334" />
+        <entry key="..\:/AndridProject/Szong1/app/src/main/res/layout/recycler_blank.xml" value="0.16614583333333333" />
         <entry key="..\:/AndridProject/Szong1/app/src/main/res/layout/recycler_daily_recommend_song.xml" value="0.12395833333333334" />
         <entry key="..\:/AndridProject/Szong1/app/src/main/res/layout/recycler_fragment_my_icon.xml" value="0.2" />
         <entry key="..\:/AndridProject/Szong1/app/src/main/res/layout/recycler_fragment_my_user.xml" value="0.10104166666666667" />

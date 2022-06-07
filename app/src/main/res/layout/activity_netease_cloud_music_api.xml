@@ -84,30 +84,30 @@
                 android:text="二维码登录"
                 style="@style/defaultValueText" />
 
-            <TextView
-                android:text="不会自行配置？尝试获取测试版 API"
-                style="@style/style_settings_title" />
+<!--            <TextView-->
+<!--                android:text="不会自行配置？尝试获取测试版 API"-->
+<!--                style="@style/style_settings_title" />-->
 
-            <TextView
-                android:textIsSelectable="true"
-                android:text="微信扫描以下二维码或者微信公众号搜索关注【遇荐】（开发者 @Moriafly 指定微信公众号），回复【网易云api】，即可获取测试版 API。还有许多开发者软件等你体验。"
-                style="@style/defaultValueText" />
+<!--            <TextView-->
+<!--                android:textIsSelectable="true"-->
+<!--                android:text="微信扫描以下二维码或者微信公众号搜索关注【遇荐】（开发者 @Moriafly 指定微信公众号），回复【网易云api】，即可获取测试版 API。还有许多开发者软件等你体验。"-->
+<!--                style="@style/defaultValueText" />-->
 
-            <ImageView
-                android:layout_margin="10dp"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:src="@drawable/qrcode_yujian"/>
+<!--            <ImageView-->
+<!--                android:layout_margin="10dp"-->
+<!--                android:layout_width="100dp"-->
+<!--                android:layout_height="100dp"-->
+<!--                android:src="@drawable/qrcode_yujian"/>-->
 
-            <TextView
-                android:text="自行配置启用 API 服务"
-                style="@style/style_settings_title" />
+<!--            <TextView-->
+<!--                android:text="自行配置启用 API 服务"-->
+<!--                style="@style/style_settings_title" />-->
 
-            <com.example.szong.widget.ItemLayout
-                android:id="@+id/itemNeteaseCloudMusicApiGithub"
-                android:layout_width="match_parent"
-                android:layout_height="56dp"
-                app:text="请访问 NeteaseCloudMusicApi Github"/>
+<!--            <com.example.szong.widget.ItemLayout-->
+<!--                android:id="@+id/itemNeteaseCloudMusicApiGithub"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="56dp"-->
+<!--                app:text="请访问 NeteaseCloudMusicApi Github"/>-->
 
 
         </LinearLayout>

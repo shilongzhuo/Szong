@@ -106,13 +106,14 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
-        android:id="@+id/tvVersion"
+        android:id="@+id/team"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:alpha="0.72"
-        android:text="3.0"
+        android:text="二十四桥明月夜队"
         android:textColor="@color/colorSubTextForeground"
         app:layout_constraintBottom_toTopOf="@+id/tvLogo"
-        app:layout_constraintEnd_toEndOf="@+id/tvLogo" />
+        app:layout_constraintEnd_toEndOf="@+id/tvLogo"
+        app:layout_constraintStart_toStartOf="@+id/tvLogo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
