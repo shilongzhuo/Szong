@@ -14,13 +14,13 @@ import coil.load
 import coil.size.ViewSizeResolver
 import com.example.szong.App
 import com.example.szong.R
-import com.example.szong.data.music.standard.StandardSinger
+import com.example.szong.data.music.standard.StandardSingerData
 import com.example.szong.util.ui.opration.dp
 
-class SingerAdapter (private val itemClickListener: (StandardSinger) -> Unit)
-    : ListAdapter<StandardSinger, SingerAdapter.ViewHolder>(DiffCallback) {
+class SingerAdapter (private val itemClickListener: (StandardSingerData) -> Unit)
+    : ListAdapter<StandardSingerData, SingerAdapter.ViewHolder>(DiffCallback) {
 
-    inner class ViewHolder(view: View, itemClickListener: (StandardSinger) -> Unit)
+    inner class ViewHolder(view: View, itemClickListener: (StandardSingerData) -> Unit)
         : RecyclerView.ViewHolder(view) {
         private val clTrack: ConstraintLayout = view.findViewById(R.id.clTrack)
         val ivCover: ImageView = view.findViewById(R.id.ivCover)
@@ -28,7 +28,7 @@ class SingerAdapter (private val itemClickListener: (StandardSinger) -> Unit)
         val tips: TextView = view.findViewById(R.id.tips)
         val radius = view.context.resources.getDimension(R.dimen.defaultRadius)
 
-        var selectPlaylist: StandardSinger? = null
+        var selectPlaylist: StandardSingerData? = null
 
         init {
             clTrack.setOnClickListener {
@@ -59,12 +59,12 @@ class SingerAdapter (private val itemClickListener: (StandardSinger) -> Unit)
         }
     }
 
-    object DiffCallback : DiffUtil.ItemCallback<StandardSinger>() {
-        override fun areItemsTheSame(oldItem: StandardSinger, newItem: StandardSinger): Boolean {
+    object DiffCallback : DiffUtil.ItemCallback<StandardSingerData>() {
+        override fun areItemsTheSame(oldItem: StandardSingerData, newItem: StandardSingerData): Boolean {
             return oldItem.picUrl == newItem.picUrl && oldItem.id == newItem.id
         }
 
-        override fun areContentsTheSame(oldItem: StandardSinger, newItem: StandardSinger): Boolean {
+        override fun areContentsTheSame(oldItem: StandardSingerData, newItem: StandardSingerData): Boolean {
             return oldItem == newItem
         }
     }

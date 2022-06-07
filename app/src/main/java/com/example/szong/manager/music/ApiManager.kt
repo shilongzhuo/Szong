@@ -117,7 +117,7 @@ object ApiManager {
         return AlbumAPI.getAlbumSongs(id)
     }
 
-    suspend fun getSingerSongs(id: Long): StandardSingerPackage? {
+    suspend fun getSingerSongs(id: Long): StandardSingerPackageData? {
         val songs = ArrayList<StandardSongData>()
         var result: ArtistsSongs?
         do {
@@ -130,7 +130,7 @@ object ApiManager {
         } while (result?.more == true && result.songs.isNotEmpty())
 
         HttpUtils.get("${getDefaultApi()}/artist/detail?id=$id", ArtistInfoResult::class.java, true)?.data?.artist?.let {
-            return StandardSingerPackage(it.switchToStandardSinger(), songs)
+            return StandardSingerPackageData(it.switchToStandardSinger(), songs)
         }
         return null
     }

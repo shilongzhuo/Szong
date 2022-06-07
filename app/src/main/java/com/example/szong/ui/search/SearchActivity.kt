@@ -35,7 +35,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import androidx.recyclerview.widget.*
 import com.example.szong.data.music.standard.StandardPlaylist
-import com.example.szong.data.music.standard.StandardSinger
+import com.example.szong.data.music.standard.StandardSingerData
 import com.example.szong.data.music.standard.StandardSongData
 import com.example.szong.ui.diolog.SongMenuDialog
 import com.example.szong.ui.playlist.adapter.SongAdapter
@@ -257,7 +257,7 @@ class SearchActivity : BaseActivity() {
         }
     }
 
-    private fun initSingers(singers: List<StandardSinger>) {
+    private fun initSingers(singers: List<StandardSingerData>) {
         binding.rvPlaylist.layoutManager = LinearLayoutManager(this)
         binding.rvPlaylist.adapter = SingerAdapter {
             val intent = Intent(this@SearchActivity, SongPlaylistActivity::class.java)
