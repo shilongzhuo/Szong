@@ -1,5 +1,10 @@
 package com.example.szong.ui.splash
 
+//import android.content.Intent
+//import com.example.szong.databinding.ActivitySplashBinding
+//import com.example.szong.ui.base.BaseActivity
+//import com.example.szong.ui.main.MainActivity
+//import android.os.Handler
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -26,8 +31,30 @@ class SplashActivity : AppCompatActivity() {
             override fun run(){
                 val intent = Intent(applicationContext,MainActivity::class.java)
                 startActivity(intent)
+                finish()
             }
         },3000)
-
     }
 }
+//class SplashActivity : BaseActivity() {
+//
+//    private lateinit var binding: ActivitySplashBinding
+//
+//    override fun initBinding() {
+//        binding = ActivitySplashBinding.inflate(layoutInflater)
+//        setContentView(binding.root)
+//    }
+//
+//    override fun onStart() {
+//        super.onStart()
+//        binding.appname.animate().translationY(-600f).setDuration(2700).setStartDelay(0)
+////        lottie.animate().translationX(2000f).setDuration(2000).setStartDelay(0)
+//        Handler().postDelayed(object : Runnable {
+//            override fun run(){
+//                val intent = Intent(applicationContext,MainActivity::class.java)
+//                startActivity(intent)
+//            }
+//        },3000)
+//        finish()
+//    }
+

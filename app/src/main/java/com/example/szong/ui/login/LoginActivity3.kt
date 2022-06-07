@@ -40,7 +40,7 @@ class LoginActivity3 : BaseActivity() {
         try {
             val typeface = Typeface.createFromAsset(assets, "fonts/Moriafly-Regular.ttf")
             binding.tvLogo.typeface = typeface
-            binding.tvVersion.typeface = typeface
+//            binding.tvVersion.typeface = typeface
         } catch (e: Exception) {
             toast("LOGIN ERROR")
         }
