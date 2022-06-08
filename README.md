@@ -136,16 +136,32 @@
 
 ## 前端设计和界面展示
 1. 启动动画
-   ![启动动画](szongIntroduce/startAnimation.jpg)
+   <p>
+    <img src="szongIntroduce/startAnimation.jpg" width="225" height="400">
+   </p>
 2. 首页
-   首页展示
-   ![首页展示](szongIntroduce/mainInterface.jpg)
-   ![本地歌曲](szongIntroduce/localInterface.jpg)![本地搜索](szongIntroduce/localSearch.jpg)
-   ![历史播放](szongIntroduce/historyInterface.jpg)![我的收藏](szongIntroduce/loveInterface.jpg)![创建歌单](szongIntroduce/createPlaylist.jpg)
-
+   首页展示,本地歌曲展示，本地搜索展示，历史播放展示，我的收藏展示，创建歌单展示
+   <p>
+    <img src="szongIntroduce/mainInterface.jpg" width="225" height="400">
+    <img src="szongIntroduce/localInterface.jpg" width="225" height="400">
+    <img src="szongIntroduce/localSearch.jpg" width="225" height="400">
+    <img src="szongIntroduce/historyInterface.jpg" width="225" height="400">
+    <img src="szongIntroduce/loveInterface.jpg" width="225" height="400">
+    <img src="szongIntroduce/createPlaylist.jpg" width="225" height="400">
+   </p>
 3. 播放界面
-   ![播放界面](szongIntroduce/playInterface.jpg)![歌词展示](szongIntroduce/songWordsInterface.jpg)
+   播放界面展示，歌词展示
+  <p>
+    <img src="szongIntroduce/playInterface.jpg" width="225" height="400">
+    <img src="szongIntroduce/songWordsInterface.jpg" width="225" height="400">
+   </p>
 4. 在线界面
-   ![在线排行](szongIntroduce/onlineRankInterface.jpg)![在线推荐](szongIntroduce/onlineRecommendInterface.jpg)![在线搜索](szongIntroduce/onlineSearchInterface.jpg)
+在线排行,在线推荐
+   <p>
+    <img src="szongIntroduce/onlineRankInterface.jpg" width="225" height="400">
+    <img src="szongIntroduce/onlineRecommendInterface.jpg" width="225" height="400">
+   </p>
 5. 其他
-   ![系统设置](szongIntroduce/settingInterface.jpg)
+   <p>
+    <img src="szongIntroduce/settingInterface.jpg" width="225" height="400">
+   </p>
