@@ -94,7 +94,7 @@ class MyFragment : BaseFragment() {
 
 
         val concatAdapter = ConcatAdapter(myFragmentUserAdapter, myFragmentIconAdapter
-                ,myPlaylistAdapter,blankAdapter,localPlaylistAdapter)
+                ,myPlaylistAdapter,localPlaylistAdapter)
 
         rvMy.layoutManager = LinearLayoutManager(requireContext())
         rvMy.adapter = concatAdapter
