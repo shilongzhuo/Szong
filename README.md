@@ -139,7 +139,7 @@
    ![启动动画](szongIntroduce/startAnimation.jpg)
 2. 首页
    首页展示
-   ![首页展示](szongIntroduce/localSearch.jpg)
+   ![首页展示](szongIntroduce/mainInterface.jpg)
    ![本地歌曲](szongIntroduce/localInterface.jpg)![本地搜索](szongIntroduce/localSearch.jpg)
    ![历史播放](szongIntroduce/historyInterface.jpg)![我的收藏](szongIntroduce/loveInterface.jpg)![创建歌单](szongIntroduce/createPlaylist.jpg)
 
