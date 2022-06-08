@@ -16,11 +16,23 @@
         <entry key="..\:/AndridProject/Szong1/app/src/main/res/drawable/background_button_radius_red.xml" value="0.164" />
         <entry key="..\:/AndridProject/Szong1/app/src/main/res/drawable/background_item_default.xml" value="0.164" />
         <entry key="..\:/AndridProject/Szong1/app/src/main/res/drawable/background_seek_bar_music.xml" value="0.164" />
+        <entry key="..\:/AndridProject/Szong1/app/src/main/res/drawable/background_seek_bar_thumb.xml" value="0.1765" />
+        <entry key="..\:/AndridProject/Szong1/app/src/main/res/drawable/background_tab_indicator.xml" value="0.1765" />
         <entry key="..\:/AndridProject/Szong1/app/src/main/res/drawable/bg_card.xml" value="0.1615" />
+        <entry key="..\:/AndridProject/Szong1/app/src/main/res/drawable/bg_home_ball.xml" value="0.1765" />
+        <entry key="..\:/AndridProject/Szong1/app/src/main/res/drawable/bg_login_background.xml" value="0.1765" />
+        <entry key="..\:/AndridProject/Szong1/app/src/main/res/drawable/ic_baseline_album_24.xml" value="0.1765" />
         <entry key="..\:/AndridProject/Szong1/app/src/main/res/drawable/ic_baseline_keyboard_tab_24.xml" value="0.1615" />
+        <entry key="..\:/AndridProject/Szong1/app/src/main/res/drawable/ic_baseline_playlist_24.xml" value="0.1765" />
+        <entry key="..\:/AndridProject/Szong1/app/src/main/res/drawable/ic_baseline_remove_circle_24.xml" value="0.1765" />
         <entry key="..\:/AndridProject/Szong1/app/src/main/res/drawable/ic_cloud_music.xml" value="0.111" />
+        <entry key="..\:/AndridProject/Szong1/app/src/main/res/drawable/ic_cloud_music_engine.xml" value="0.2125" />
+        <entry key="..\:/AndridProject/Szong1/app/src/main/res/drawable/ic_exit_app.xml" value="0.2125" />
         <entry key="..\:/AndridProject/Szong1/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1615" />
         <entry key="..\:/AndridProject/Szong1/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.1345" />
+        <entry key="..\:/AndridProject/Szong1/app/src/main/res/drawable/ic_message.xml" value="0.2125" />
+        <entry key="..\:/AndridProject/Szong1/app/src/main/res/drawable/ic_mini_player_pause.xml" value="0.2125" />
+        <entry key="..\:/AndridProject/Szong1/app/src/main/res/drawable/ic_play_queue.xml" value="0.2125" />
         <entry key="..\:/AndridProject/Szong1/app/src/main/res/drawable/ic_round_pause_24.xml" value="0.1265" />
         <entry key="..\:/AndridProject/Szong1/app/src/main/res/drawable/ic_round_play_arrow_24.xml" value="0.103" />
         <entry key="..\:/AndridProject/Szong1/app/src/main/res/drawable/ic_round_skip_next_24.xml" value="0.103" />

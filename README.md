@@ -102,8 +102,20 @@
   UI资源下载：https://www.aigei.com/icon/
 
 ## 前端设计
-1. 首页
-2.
+1. 启动动画
+![启动动画](szongIntroduce/startAnimation.jpg)
+2. 首页
+首页展示
+![首页展示](szongIntroduce/localSearch.jpg)
+![本地歌曲](szongIntroduce/localInterface.jpg)![本地搜索](szongIntroduce/localSearch.jpg)
+![历史播放](szongIntroduce/historyInterface.jpg)![我的收藏](szongIntroduce/loveInterface.jpg)![创建歌单](szongIntroduce/createPlaylist.jpg)
+
+3. 播放界面
+![播放界面](szongIntroduce/playInterface.jpg)![歌词展示](szongIntroduce/songWordsInterface.jpg)
+4. 在线界面
+![在线排行](szongIntroduce/onlineRankInterface.jpg)![在线推荐](szongIntroduce/onlineRecommendInterface.jpg)![在线搜索](szongIntroduce/onlineSearchInterface.jpg)
+5. 其他
+![系统设置](szongIntroduce/settingInterface.jpg)![登录](szongIntroduce/loginInterface.jpg)
 ## 目前项目进度
 - [x] 登录（第三方UID，手机号,网易云扫码）
 - [x] 本地音乐
@@ -122,7 +134,7 @@
 ## 用到的技术
 前端：安卓原生UI
 后端：kotlin
-数据库：sqlite
+数据库：room
 
 ## 部署说明
 
