@@ -131,3 +131,7 @@
 ## 第三方API
 网易云 ：http://music.eleuu.com/
 
+## NeteaseCloudMusicApi 在线登录配置
+在线歌单等，在线音乐等功能需要手动配置API
+参考提供免费网易云API: https://autumnfish.cn
+或者使用其他API配置
