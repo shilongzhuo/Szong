@@ -2,9 +2,11 @@ package com.example.szong.ui.main.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.szong.api.music.playlist.localplaylist.local.LocalPlaylistAPI
 import com.example.szong.config.API_MUSIC_ELEUU
 import com.example.szong.data.music.PlaylistData
 import com.example.szong.data.music.UserPlaylistData
+import com.example.szong.data.music.standard.StandardPlaylistData
 import com.example.szong.manager.user.NeteaseUser
 import com.example.szong.util.net.HttpUtils
 import kotlinx.coroutines.Dispatchers
@@ -17,6 +19,8 @@ class MyFragmentViewModel : ViewModel() {
 
     // 用户歌单
     var userPlaylistList = MutableLiveData<ArrayList<PlaylistData>>()
+    var localPlaylistList = MutableLiveData<ArrayList<StandardPlaylistData>>()
+
 
     fun updateUserPlaylist(useCache: Boolean) {
         if (NeteaseUser.uid != 0L) {
@@ -31,6 +35,13 @@ class MyFragmentViewModel : ViewModel() {
                         updateUserPlaylist(false)
                     }
                 }
+            }
+        }
+    }
+    fun updateLocalPalylist(){
+        GlobalScope.launch {
+            withContext(Dispatchers.Main) {
+                localPlaylistList.value = LocalPlaylistAPI.read().lists
             }
         }
     }

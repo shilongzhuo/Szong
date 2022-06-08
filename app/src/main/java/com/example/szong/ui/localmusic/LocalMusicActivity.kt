@@ -16,8 +16,6 @@ import com.example.szong.data.music.standard.StandardSongData
 import com.example.szong.databinding.ActivityLocalMusicBinding
 import com.example.szong.ui.base.BaseActivity
 import com.example.szong.ui.diolog.SongMenuDialog
-import com.example.szong.ui.playlist.SongSearchActivity
-import com.example.szong.ui.playlist.SongSearchTransmit
 import com.example.szong.ui.playlist.adapter.SongAdapter
 import com.example.szong.util.app.runOnMainThread
 import com.example.szong.widget.toast
@@ -35,14 +33,6 @@ class LocalMusicActivity : BaseActivity() {
                 LocalMusicAPI.scanLocalMusic(context, {
                     runOnMainThread {
                         songList.value = it
-                        /**
-                        binding.titleBar.setTitleBarText("本地音乐(${it.size})")
-                        songList.value = it
-                        songList = it
-                        adapter.submitList(it)
-                        itemSearchAdapter.text = "搜索此列表歌曲 ${it.size} 首"
-                        binding.rvSongs.scrollToPosition(0)
-                        */
                     }
                 }, {
 

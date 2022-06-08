@@ -14,6 +14,9 @@ import com.example.szong.ui.playlist.PlayHistoryActivity
 import com.example.szong.widget.toast
 
 
+/**
+ * 播放界面的“更多“
+ */
 class PlayerMenuMoreDialog(context: Context) : BaseBottomSheetDialog(context) {
 
     private val binding: DialogPlayMoreBinding = DialogPlayMoreBinding.inflate(layoutInflater)
@@ -59,9 +62,13 @@ class PlayerMenuMoreDialog(context: Context) : BaseBottomSheetDialog(context) {
 //                    }
 //                }
 //            }
+            itemCreateLocalMyPlaylist.setOnClickListener {
+                CreateLocalPlaylistDialog(context).show()
+            }
+
             //添加到本地歌单
             itemAddLocalMyPlaylist.setOnClickListener{
-
+              //  LocalPlaylistDialog(context).show()
             }
             // 歌曲信息
             itemSongInfo.setOnClickListener {

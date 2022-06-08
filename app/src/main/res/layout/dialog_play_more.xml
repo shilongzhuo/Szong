@@ -40,6 +40,11 @@
 <!--            android:layout_height="48dp"-->
 <!--            app:text="@string/add_to_local_my_favorite" />-->
         <com.example.szong.widget.ItemLayout
+            android:id="@+id/itemCreateLocalMyPlaylist"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            app:text="@string/create_local_my_playlist" />
+        <com.example.szong.widget.ItemLayout
             android:id="@+id/itemAddLocalMyPlaylist"
             android:layout_width="match_parent"
             android:layout_height="48dp"

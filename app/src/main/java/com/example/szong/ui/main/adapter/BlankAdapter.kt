@@ -7,7 +7,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.example.szong.R
 
-class BlankAdapter(private val bottomHeight: Int): RecyclerView.Adapter<BlankAdapter.ViewHolder>() {
+class BlankAdapter(private val bottomHeight: Int, title:String?=null): RecyclerView.Adapter<BlankAdapter.ViewHolder>() {
 
     inner class ViewHolder(view: View): RecyclerView.ViewHolder(view) {
         val clBase: ConstraintLayout = view.findViewById(R.id.clBase)

@@ -1,4 +1,4 @@
-package com.example.szong.ui.playlist
+package com.example.szong.ui.localmusic
 
 import com.example.szong.data.music.standard.StandardSongData
 

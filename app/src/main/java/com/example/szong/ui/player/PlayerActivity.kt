@@ -40,10 +40,7 @@ import com.example.szong.databinding.ActivityPlayerBinding
 import com.example.szong.service.media.base.BaseMediaService
 import com.example.szong.service.media.device.VolumeManager
 import com.example.szong.ui.base.SlideBackActivity
-import com.example.szong.ui.diolog.PlayerMenuMoreDialog
-import com.example.szong.ui.diolog.PlaylistDialog
-import com.example.szong.ui.diolog.SoundEffectDialog
-import com.example.szong.ui.diolog.TimingOffDialog
+import com.example.szong.ui.diolog.*
 import com.example.szong.ui.player.viewmodel.PlayerViewModel
 import com.example.szong.util.app.runOnMainThread
 import com.example.szong.util.app.singleClick
@@ -187,6 +184,7 @@ class PlayerActivity : SlideBackActivity() {
                     }
                 }
             }
+
             if (!isLandScape) {
                 includePlayerCover.root.setOnLongClickListener {
                     startActivity(Intent(this@PlayerActivity, SongCoverActivity::class.java))

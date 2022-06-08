@@ -16,7 +16,8 @@ import com.example.szong.data.music.standard.parseArtist
 /**
  * 播放列表适配器
  */
-class PlaylistDialogAdapter(private val list: ArrayList<StandardSongData>): RecyclerView.Adapter<PlaylistDialogAdapter.ViewHolder>() {
+class PlaylistDialogAdapter(private val list: ArrayList<StandardSongData>)
+    : RecyclerView.Adapter<PlaylistDialogAdapter.ViewHolder>() {
 
     inner class ViewHolder(view: View): RecyclerView.ViewHolder(view) {
         val tvName: TextView = view.findViewById(R.id.tvName)
@@ -25,7 +26,8 @@ class PlaylistDialogAdapter(private val list: ArrayList<StandardSongData>): Recy
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        LayoutInflater.from(parent.context).inflate(R.layout.layout_playlist_dialog, parent, false).apply {
+        LayoutInflater.from(parent.context)
+            .inflate(R.layout.layout_playlist_dialog, parent, false).apply {
             return ViewHolder(this)
         }
     }
